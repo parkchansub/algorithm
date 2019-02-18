@@ -31,7 +31,6 @@ public class Test3 {
     public int[] solution(int brown, int red) {
         int[] answer = {};
         
-        int sum = brown+ red;
         
         return answer;
     }

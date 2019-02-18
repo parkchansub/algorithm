@@ -38,6 +38,7 @@ public class Test2 {
         answer = dfs(numbers, 0, 0, target);
         return answer;
     }
+	
     int dfs(int[] numbers, int n, int sum, int target) {
         if(n == numbers.length) {
             if(sum == target) {
