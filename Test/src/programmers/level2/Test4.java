@@ -1,5 +1,8 @@
 package programmers.level2;
-// 프로그래머스  - 최댓값과 최소값(진행중)
+
+import java.util.Arrays;
+
+// 프로그래머스  - 최댓값과 최소값(완료)
 
 	/*
 	문자열 s에는 공백으로 구분된 숫자들이 저장되어 있습니다. str에 나타나는 숫자 중 최소값과 최대값을 찾아 이를 (최소값) (최대값)형태의 문자열을 반환하는 함수, solution을 완성하세요.
@@ -20,11 +23,19 @@ public class Test4 {
 		String b = "-1 -2 -3 -4"; 
 		
 		Test4 test4 = new Test4();
-		
+		String c= test4.solution(b);
+		System.out.println(c);
 	}
 	
 	public String solution(String s) {
 	      String answer = "";
+	      String[] data = s.split(" ");
+	      int[] intdata = new int[data.length];
+	      for(int i=0;i<data.length;i++){
+	    	  intdata[i]=Integer.parseInt(data[i]);
+	      }
+	      Arrays.sort(intdata);
+	      answer = String.valueOf(intdata[0]+" "+intdata[intdata.length-1]);
 	      return answer;
 	}
 	
