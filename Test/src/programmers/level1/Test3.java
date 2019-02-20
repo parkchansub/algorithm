@@ -10,12 +10,11 @@ public class Test3 {
     	String[] b= new String[] {"eden", "kiki","leo", "kiki"};
     	String[] as  = new String[] {"leo", "kiki", "eden"};
     	String[] bs  = new String[] {"eden", "kiki"};
-    	String[] asd = new String[] {"marina", "josipa", "nikola", "vinko", "filipa"};
-    	String[] bsd = new String[] {"josipa", "filipa", "marina", "nikola"};
-    	
+    	String[] asd = new String[] {"mislav", "stanko", "ana", "ana", "mislav"};
+    	String[] bsd = new String[] {"stanko", "ana", "mislav", "mislav"};
     	Test3 test1 = new Test3();
     	
-    	String d1 = test1.solution2(as, bs);
+    	String d1 = test1.solution2(asd, bsd);
     	System.out.println(d1);
     }
     
@@ -34,6 +33,7 @@ public class Test3 {
         for(int k=0;participant.length>k;k++){
             if(participant[k]!="flase"){
             	answer = participant[k];
+            	break;
             }
         }
         
@@ -56,10 +56,11 @@ public class Test3 {
         		}
         		
         	}
-        	
+        	String[] bsd = new String[] {"stanko", "ana", "mislav", "mislav"};
         	for(int j=0;j<completion.length;j++){
         		if(map.containsKey(completion[j])){
         			int num = (int) map.get(completion[j])-1;
+        			map.put(completion[j], num);
         			if(num==0){
         				map.remove(completion[j]);
         			}
