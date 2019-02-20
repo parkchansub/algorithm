@@ -53,4 +53,13 @@ public class Test1 {
 		
 		return answer;
 	}
+	
+	
+	public int solution2(String skill, String[] skill_trees) {
+		char[] charSkill = skill.toCharArray();
+		/*if(charSkill[i])*/
+		
+		return 0;
+	}
+	
 }
