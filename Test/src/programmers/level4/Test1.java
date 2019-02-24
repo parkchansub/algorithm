@@ -25,7 +25,7 @@ package programmers.level4;
 	
 		  left	      right	    return
 		[3, 2, 5]	[2, 4, 1]	  7
-	345678
+
 	입출력 예 설명
 	
 	먼저 오른쪽 카드를 버려서 2점을 획득한다.
@@ -38,12 +38,36 @@ public class Test1 {
 
 	public static void main(String[] args) {
 		
+		Test1 test1 = new Test1();
+		int[] left = new int[]{3, 2, 5};
+		int[] right = new int[]{2, 4, 1};
+		int a = test1.solution(left, right);
+		System.out.println(a);
 	}
 
-	class Solution {
-	    public int solution(int[] left, int[] right) {
-	        int answer = 0;
-	        return answer;
-	    }
+	public int solution(int[] left, int[] right) {
+	    int answer = 0;
+	    
+	    answer = dfs(left, right, 0, 0, 0);
+	    return answer;
+	     
 	}
+	public int dfs(int[] left, int[] right, int sum, int i, int j){
+		
+		if(j<right.length && left[i]>right[j]){
+			sum = sum + right[j];
+		}
+		if(i==left.length-1 && j==right.length-1){
+			return sum;
+		}
+		
+		if(left[i]<=right[j] && i<left.length){
+			i++;
+			return dfs(left,right, sum, i, j);
+		}
+		
+		return dfs(left,right, sum, i, j+1);
+	}
+	    
+	    
 }
