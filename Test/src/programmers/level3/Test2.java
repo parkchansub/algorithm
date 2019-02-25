@@ -42,27 +42,11 @@ import java.util.Map;
 public class Test2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
     public int[] solution(String[] genres, int[] plays) {
         int[] answer = {};
-        Map hashmap = new HashMap<String, Integer>();
-        Map hashmap2 = new HashMap<String, Integer>();
         
-        
-        for(int i=1;i<genres.length;i++){
-
-        	if(hashmap.containsKey(genres[i])){
-        		int a = (int) hashmap.get(genres[i]);
-        		hashmap.put(genres[i], a+plays[i]);
-        	}
-        	else{
-            	hashmap.put(genres[i], plays[i]);
-        	}
-        		
-
-        }
         
         return answer;
     }
