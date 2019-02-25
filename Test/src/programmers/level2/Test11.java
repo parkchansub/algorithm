@@ -1,8 +1,5 @@
 package programmers.level2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //프로그래머스 - 더맵게
 	/*
 	매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다. 
@@ -42,12 +39,6 @@ public class Test11 {
 	public static void main(String[] args) {
 		Test11 test11 = new Test11();
 		int[] a = new int[]{1, 2, 3, 9, 10, 12};
-		List list = new ArrayList<Integer>();
-		list.add(1);
-		
-		
-		
-		
 		
 		test11.solution(a , 7);
 	}
