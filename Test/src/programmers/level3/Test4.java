@@ -1,4 +1,8 @@
 package programmers.level3;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //프로그래머스  - 가장 긴 팰린드롬
 	/*
 	앞뒤를 뒤집어도 똑같은 문자열을 팰린드롬(palindrome)이라고 합니다.
@@ -28,7 +32,9 @@ package programmers.level3;
 public class Test4 {
 
 	public static void main(String[] args) {
-
+		Map<String, String> inactiveFlag = new HashMap<String, String>();
+		inactiveFlag.put("asdf", "asdfs");
+		System.out.println(inactiveFlag.containsKey("asdf"));
 	}
 	
 	 public int solution(String s)
