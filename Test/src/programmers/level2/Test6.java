@@ -1,6 +1,6 @@
 package programmers.level2;
 
-// 프로그래머스 - JadenCase 문자열 만들기
+// 프로그래머스 - JadenCase 문자열 만들기(런타임 에러)
 
 
 	/*
@@ -31,6 +31,7 @@ public class Test6 {
 	public String solution(String s) {
 		
 	    String answer = "";
+	    s = s.toLowerCase();
 	    String[] sList = s.split(" ");
 	    String[] answerList = new String[sList.length];
 	    
@@ -42,10 +43,11 @@ public class Test6 {
 	    	if(intc>=97 && intc<=122){
 	    		intc = intc-32;
 	    		ch[0] = (char) intc;
+	    		answerList[i] =	ch[0]+sList[i].substring(1, sList[i].length());
 	    	}
-	    	for(int j=0;j<ch.length;j++){
-    			answerList[i] =	answerList[i] + ch[j];
-    		}
+	    	else{
+	    		answerList[i] = sList[i];
+	    	}
 	    }
 	    
 	    for(int i=0;i<answerList.length;i++){
