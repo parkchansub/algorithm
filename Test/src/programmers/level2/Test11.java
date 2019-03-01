@@ -1,6 +1,6 @@
 package programmers.level2;
 
-import java.util.Arrays;
+import java.util.PriorityQueue;
 
 //프로그래머스 - 더맵게
 	/*
@@ -42,28 +42,32 @@ public class Test11 {
 		Test11 test11 = new Test11();
 		int[] a = new int[]{1, 2, 3, 9, 10, 12};
 		
-		test11.solution(a , 7);
+		int b = test11.solution(a , 7);
+		
+		System.out.println(b);
 	}
 	
-    public int solution(int[] scoville, int k) {
-        int answer = 0;
-        
-        Arrays.sort(scoville);
-        dfs(scoville, 0, k , scoville[scoville.length]);
-        return answer;
+    public int solution(int[] scoville, int K) {
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+
+        for(int i = 0; i < scoville.length; i++)
+            q.add(scoville[i]);
+
+        int count = 0;
+        while(q.size() > 1 && q.peek() < K){
+        	
+            int weakHot = q.poll();
+            System.out.println("weakHot : "+weakHot);
+            int secondWeakHot = q.poll();
+            System.out.println("secondWeakHot : "+secondWeakHot);
+            int mixHot = weakHot + (secondWeakHot * 2);
+            q.add(mixHot);
+            count++;
+        }
+
+        if(q.size() <= 1 && q.peek() < K)
+            count = -1;
+
+        return count;
     }
-   public int[] dfs(int[] data, int p, int q, int r) {
-	   int[] tmp = new int[data.length];
-	   
-	   int i = p; 
-	   int j = q+1;
-	   int k = r;
-	   if(i<=q && j<=r) {
-		   if(data[i]<=data[j]) {
-			   tmp[k++] = data[i++];
-		   }
-	   }
-	   
-	   return tmp; 
-   }
 }

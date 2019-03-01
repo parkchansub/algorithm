@@ -1,8 +1,6 @@
 package programmers.level2;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 // 프로그래머스  - 스킬 트리(진행중) / 
 public class Test1 {
@@ -11,55 +9,50 @@ public class Test1 {
 		String  a ="CBD";
 		String[] skill = new String[]{"BACDE","CBADF","AECB","BDA"};
 		Test1 test1 = new Test1();
-		test1.solution(a, skill);
+		int b = test1.solution(a, skill);
+		System.out.println(b);
 	}
-
-	public int solution(String skill, String[] skill_trees) {
-		int answer = 0;
-		int value = 0;
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		for(int i=0;i<skill.length();i++){
-			map.put(skill.substring(i,i+1), i+1);
-			System.out.println(skill.substring(i,i+1));
-		}
-
-
-		System.out.println("aaaaaa");
-		
-		for(int i=0;i<skill_trees.length;i++){
-			
-			for(int j=0;j<skill_trees[i].length();j++){
-				if(map.containsKey(skill_trees[i].substring(j, j+1))){
-					if(value < map.get(skill_trees[i].substring(j, j+1))){
-						System.out.println("bbbbbbbbbb");
-						System.out.println(skill_trees[i].substring(j, j+1));
-						value = map.get(skill_trees[i].substring(j, j+1));
-					}
-					/*else{
-						skill_trees[i] = "false";
-					}*/
-				}
-			}
-			
-		}
-		System.out.println("CCCCC");
-		
-		System.out.println(Arrays.toString(skill_trees));
-		for(int i=0;i<skill_trees.length;i++){
-			if(skill_trees[i]!="false"){
-				answer++;
-			}
-		}
-		
-		return answer;
-	}
-	
-	
-	public int solution2(String skill, String[] skill_trees) {
-		char[] charSkill = skill.toCharArray();
-		/*if(charSkill[i])*/
-		
-		return 0;
-	}
+	  public int solution(String skill, String[] skill_trees) {
+	        HashMap<Character, Integer> map = new HashMap<>();
+	        int answer = 0;
+	        
+	        for(int i = 0; i < skill.length(); i++) {
+	            map.put(skill.charAt(i), i + 1);
+	        }
+	        
+	        for(int i = 0; i < skill_trees.length; i++) {
+	            int[] temp = new int[skill_trees[i].length()];
+	            String tmp = skill_trees[i];
+	            
+	            for(int j = 0; j < tmp.length(); j++) {
+	                if(map.containsKey(tmp.charAt(j))) {
+	                    temp[j] = map.get(tmp.charAt(j));
+	                } else {
+	                    temp[j] = 0;
+	                }
+	            }
+	            int cur = 0;
+	            for(int j = 0; j <= tmp.length(); j++) {
+	                if(j == tmp.length()) {
+	                    answer += 1;
+	                    break;
+	                }
+	                if(temp[j] <= cur) {
+	                    continue;
+	                } else {
+	                    if(temp[j] - 1 == cur) {
+	                        cur = temp[j];
+	                        if(cur == skill.length()) {
+	                            answer += 1;
+	                            break;
+	                        } 
+	                    } else {
+	                        break;
+	                    }
+	                }
+	            }
+	        }
+	        return answer;
+	    }
 	
 }
