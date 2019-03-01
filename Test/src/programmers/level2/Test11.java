@@ -1,5 +1,7 @@
 package programmers.level2;
 
+import java.util.Arrays;
+
 //프로그래머스 - 더맵게
 	/*
 	매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다. 
@@ -43,9 +45,25 @@ public class Test11 {
 		test11.solution(a , 7);
 	}
 	
-    public int solution(int[] scoville, int K) {
+    public int solution(int[] scoville, int k) {
         int answer = 0;
         
+        Arrays.sort(scoville);
+        dfs(scoville, 0, k , scoville[scoville.length]);
         return answer;
     }
+   public int[] dfs(int[] data, int p, int q, int r) {
+	   int[] tmp = new int[data.length];
+	   
+	   int i = p; 
+	   int j = q+1;
+	   int k = r;
+	   if(i<=q && j<=r) {
+		   if(data[i]<=data[j]) {
+			   tmp[k++] = data[i++];
+		   }
+	   }
+	   
+	   return tmp; 
+   }
 }
