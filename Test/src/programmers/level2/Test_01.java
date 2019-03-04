@@ -3,12 +3,12 @@ package programmers.level2;
 import java.util.HashMap;
 
 // 프로그래머스  - 스킬 트리(진행중) / 
-public class Test1 {
+public class Test_01 {
 
 	public static void main(String[] args) {
 		String  a ="CBD";
 		String[] skill = new String[]{"BACDE","CBADF","AECB","BDA"};
-		Test1 test1 = new Test1();
+		Test_01 test1 = new Test_01();
 		int b = test1.solution(a, skill);
 		System.out.println(b);
 	}

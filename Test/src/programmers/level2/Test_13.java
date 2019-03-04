@@ -25,10 +25,10 @@ import java.util.Arrays;
 	
 	이 과학자가 발표한 논문의 수는 5편이고, 그중 3편의 논문은 3회 이상 인용되었습니다. 그리고 나머지 2편의 논문은 3회 이하 인용되었기 때문에 이 과학자의 H-Index는 3입니다.
 	*/
-public class Test13 {
+public class Test_13 {
 
 	public static void main(String[] args) {
-		Test13 test13 = new Test13();
+		Test_13 test13 = new Test_13();
 		/*int[] citations = new int[]{3, 2, 6, 1, 5};*/
 		int[] citations = new int[]{3, 2,7,10,9, 6, 1, 5};
 		int a = test13.solution(citations);

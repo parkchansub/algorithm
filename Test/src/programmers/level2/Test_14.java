@@ -29,10 +29,10 @@ import java.util.Arrays;
 	5초 시점의 ₩3은 0초간 가격이 떨어지지 않았습니다.
 	
 	*/
-public class Test14 {
+public class Test_14 {
 
 	public static void main(String[] args) {
-		Test14 test14 = new Test14();
+		Test_14 test14 = new Test_14();
 		
 		int[] prices = new int[] {1,2,3,2,2,3};
 		int[] a = test14.solution(prices);

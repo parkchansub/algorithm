@@ -19,11 +19,11 @@ package programmers.level2;
 	 8		 1	 [3, 3]
 	 24		 24	 [8, 6]
 			*/
-public class Test3 {
+public class Test_03 {
 
 	public static void main(String[] args) {
 		
-		Test3 test3 = new Test3();
+		Test_03 test3 = new Test_03();
 		test3.solution(10, 2);
 		
 

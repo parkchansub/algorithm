@@ -16,11 +16,11 @@ package programmers.level2;
 	"1231234"		3	"3234"
 	"4177252841"	4	"775841"
 	*/
-public class Test15 {
+public class Test_15 {
 
 	public static void main(String[] args) {
 		
-		Test15 test15 = new Test15();
+		Test_15 test15 = new Test_15();
 		
 		String number = "1924";
 		int k = 2;

@@ -19,11 +19,11 @@ package programmers.level2;
 	for the last week		For The Last Week
 	
 	*/
-public class Test6 {
+public class Test_06 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Test6 test6 = new Test6();
+		Test_06 test6 = new Test_06();
 		String s = "3people unFollowed me";
 		String b= test6.solution(s);
 		System.out.println(b);

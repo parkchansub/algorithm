@@ -22,11 +22,11 @@ package programmers.level2;
 	입출력 예 설명
 	문제에 나온 예와 같습니다.
 	*/
-public class Test2 {
+public class Test_02 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Test2 test2 = new Test2();
+		Test_02 test2 = new Test_02();
 		int[] numbers = new int[]{1,4,2,7,1};
 		int target = 3; 
 		int s  = test2.solution(numbers, target);

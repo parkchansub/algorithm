@@ -33,13 +33,13 @@ import java.util.PriorityQueue;
 	
 	따라서 7일째에 2개의 기능, 9일째에 1개의 기능이 배포됩니다.
 	*/
-public class Test12 {
+public class Test_12 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] progresses = new int[]{93,30,55};
 		int[] speeds = new int[]{1,30,5};
-		Test12 test12 = new Test12();
+		Test_12 test12 = new Test_12();
 		int[] a = test12.solution(progresses, speeds);
 		
 		System.out.println(Arrays.toString(a));

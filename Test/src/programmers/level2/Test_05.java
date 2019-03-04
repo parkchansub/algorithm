@@ -20,11 +20,11 @@ package programmers.level2;
 	문제의 예시와 같습니다.
 	*/
 
-public class Test5 {
+public class Test_05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Test5 test5 = new Test5();
+		Test_05 test5 = new Test_05();
 		int a = test5.solution(15);
 		System.out.println(a);
 	}

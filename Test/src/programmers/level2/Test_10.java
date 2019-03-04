@@ -34,7 +34,7 @@ package programmers.level2;
 	4일째 공급받고 나면 15일 이후 아침에는 9톤의 밀가루가 남아있게 되고, 이때 10톤을 더 공급받으면 19톤이 남아있게 됩니다. 15일 이후부터 29일 이후까지 필요한 밀가루는 15톤이므로 더 이상의 공급은 필요 없습니다.
 	따라서 총 2회의 밀가루를 공급받으면 됩니다.*/
 
-public class Test10 {
+public class Test_10 {
 
 	public static void main(String[] args) {
 

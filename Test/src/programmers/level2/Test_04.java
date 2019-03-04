@@ -16,13 +16,13 @@ import java.util.Arrays;
 	-1 -2 -3 -4		 -4 -1
 	-1 -1			 -1 -1
 	*/
-public class Test4 {
+public class Test_04 {
 
 	public static void main(String[] args) {
 		String a = "1 2 3 4";
 		String b = "-1 -2 -3 -4"; 
 		
-		Test4 test4 = new Test4();
+		Test_04 test4 = new Test_04();
 		String c= test4.solution(b);
 		System.out.println(c);
 	}

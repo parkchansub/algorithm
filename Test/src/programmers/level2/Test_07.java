@@ -1,11 +1,11 @@
 package programmers.level2;
 import java.util.Arrays;
 //프로그래머스 - 탑(완료) / 블로그 (완료)
-public class Test7 {
+public class Test_07 {
 
 	public static void main(String[] args) {
 		
-		Test7 test7 = new Test7();
+		Test_07 test7 = new Test_07();
 		int[] heights = new int[]{6,9,5,7,4};
 		int[] answer = test7.solution(heights);  
 		

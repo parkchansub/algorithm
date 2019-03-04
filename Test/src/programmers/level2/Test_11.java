@@ -36,10 +36,10 @@ import java.util.PriorityQueue;
 	
 	모든 음식의 스코빌 지수가 7 이상이 되었고 이때 섞은 횟수는 2회입니다.
 	*/
-public class Test11 {
+public class Test_11 {
 
 	public static void main(String[] args) {
-		Test11 test11 = new Test11();
+		Test_11 test11 = new Test_11();
 		int[] a = new int[]{1, 2, 3, 9, 10, 12};
 		
 		int b = test11.solution(a , 7);

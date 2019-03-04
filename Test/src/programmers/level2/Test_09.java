@@ -1,10 +1,10 @@
 package programmers.level2;
 //  프로그래머스 - 에상 대진표(완료) / 블로그(완료)
-public class Test9 {
+public class Test_09 {
 
 	public static void main(String[] args) {
 		
-		Test9 test9 = new Test9();
+		Test_09 test9 = new Test_09();
 		System.out.println(test9.solution(8, 4, 7));
 	}
 	
