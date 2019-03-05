@@ -29,6 +29,14 @@ import java.util.StringTokenizer;
 	
 	출력
 	첫째 줄에 강호가 S층에서 G층으로 가기 위해 눌러야 하는 버튼의 수의 최소값을 출력한다. 만약, 엘리베이터로 이동할 수 없을 때는 "use the stairs"를 출력한다.
+	
+	F층 건물
+	현재 있는 곳  S층
+	가야하는 곳 G층
+	위로 U층으로 가는 버튼 
+	아래로  D층으로 가는 버튼
+	
+	10 1 10 2 1  / 6
 	*/
 
 
@@ -36,47 +44,27 @@ import java.util.StringTokenizer;
 
 public class Test5014 {
 	
-	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    
-    public static void main(String args[]) throws IOException {
-        run();
-        bw.flush();
-        br.close();
-        bw.close();
-    }
-    public static void run() throws IOException {
-        StringTokenizer st = new StringTokenizer(br.readLine()," ");    
-        int F = Integer.parseInt(st.nextToken());
-        int S = Integer.parseInt(st.nextToken());
-        int G = Integer.parseInt(st.nextToken());
-        int U = Integer.parseInt(st.nextToken());
-        int D = Integer.parseInt(st.nextToken());
-        
-        int[] button = new int[]{U,-D};
-        Queue q = new LinkedList();
-        Map dist = new HashMap();
-
-        q.offer(S);
-        dist.put(S, 0);
-        
-        while(!q.isEmpty()) {
-            int now = (int)q.poll();
-            if (G == now) {
-                bw.write((int)dist.get(G)+"\n");
-                return;
-            }
-            for (int i = 0; i < 2; i++) {
-                int next = now + button[i];
-                if ( !dist.containsKey(next) && next <= F && next >= 1) {
-                    q.offer(next);
-                    dist.put(next, ((int)dist.get(now) +1));
-                }
-            }
-            
-        }
-        bw.write("use the stairs\n");
-    }
-
+	public static void main(String[] args) {
+		Test5014 test5014 = new Test5014();
+		
+		test5014.solution(10, 1, 10, 2, 1);
+	}
+	
+	public int solution(int F, int s, int g, int u, int d){
+		int answer = 0;
+		
+		if(s>g){
+			while(s<=g){
+				s = s-d;
+				if(s==g){
+					break;
+				}
+			}
+		}
+		if(s<g){
+			
+		}
+		return answer; 
+	}
 }
  
