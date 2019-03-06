@@ -1,7 +1,10 @@
 package programmers.level3;
 // 프로그래머스 - 단어 변환
 
-	/*
+import java.util.HashMap;
+import java.util.Map;
+
+/*
 	문제 설명
 	
 	두 개의 단어 begin, target과 단어의 집합 words가 있습니다. 아래와 같은 규칙을 이용하여 begin에서 target으로 변환하는 가장 짧은 변환 과정을 찾으려고 합니다.
@@ -46,8 +49,36 @@ public class Test6 {
 	}
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
-        char[] chb = begin.toCharArray();
-        char[] cht = target.toCharArray();
+
+        Map<String,String> wordsMap = new HashMap<String,String>();
+        for(int i=0;i<words.length;i++){
+        	wordsMap.put(words[i], words[i]);
+        }
+        
+        recosion(begin , target ,wordsMap,0);
         return answer;
+    }
+    public int recosion(String begin, String target, Map<String, String> wordsMap, int i){
+    	int answer = 0;
+    	String check = "";
+        char[] chb = begin.toCharArray();
+        
+        char[] cht = target.toCharArray();
+        
+        chb[i] = cht[i];
+        
+        for(int k=0;k<chb.length;k++){
+        	check = check +String.valueOf(chb[k]);
+        }
+        
+        if(wordsMap.containsValue(check)){
+        	i++;
+        	answer++;
+        	return recosion(begin,target, wordsMap, i);
+        }
+        else{
+        	return 0;
+        }
+        
     }
 }
