@@ -82,15 +82,19 @@ public class Test19 {
 	}
 	 public int[] solution(int n, String[] words) {
 		int[] answer = new int[2];
+		
+		//해쉬맵을 통하여 중복 여부 체크
 		Map<String, Integer> checkList = new HashMap<String, Integer>();
 		checkList.put(words[0], 0);
 		for(int i=0;i<words.length-1;i++){
 			
+			//마지막 글자와 첫번째 글자 비교하기 위한 변수 선언
 			String x =words[i].substring(words[i].length()-1, words[i].length());
 			String y = words[i+1].substring(0, 1);
 			
+			//조건이 걸리는 시점이  1. 끝말잇기가 이어지지 않을때  2. 기존에 나온 단어가 중복되어서 나올때
 			if(!x.equals(y) || checkList.containsKey(words[i+1])){
-				
+				// i+2를 한 이유는  index가 0부터 시작하여 +1 , 비교 기준이 i+1 로 하기 때문에 +1
 				if((i+2)%n==0){
 					answer[0] = n;
 					answer[1] =	(i+2)/n;
