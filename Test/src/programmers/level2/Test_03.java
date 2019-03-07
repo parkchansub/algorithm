@@ -1,6 +1,8 @@
 package programmers.level2;
-//프로그래머스 - 카펫
 
+import java.util.Arrays;
+
+//프로그래머스 - 카펫(완료) / 블로그 (완료)
 
 	/*
 	Leo는 카펫을 사러 갔다가 아래 그림과 같이 중앙에는 빨간색으로 칠해져 있고 모서리는 갈색으로 칠해져 있는 격자 모양 카펫을 봤습니다.
@@ -18,21 +20,44 @@ package programmers.level2;
 	 10		 2	 [4, 3]
 	 8		 1	 [3, 3]
 	 24		 24	 [8, 6]
-			*/
+	 */
 public class Test_03 {
 
 	public static void main(String[] args) {
 		
 		Test_03 test3 = new Test_03();
-		test3.solution(10, 2);
+		/*System.out.println(Arrays.toString(test3.solution(10, 2)));*/
+		System.out.println(Arrays.toString(test3.solution(12, 4)));
+		/*System.out.println(Arrays.toString(test3.solution(24, 24)));*/
 		
 
 	}
 	
     public int[] solution(int brown, int red) {
-        int[] answer = {};
+        int[] answer = new int[2];
         
-        
+        if(red<3){
+        	for(int i=1;i<=red;i++){
+            	int b =red/i;
+            	int check = (b*2) +(i*2)+4;
+            	int sum = (b+2)*(i+2);
+            	if(brown == check && sum == red+brown){
+            		answer[0] = b+2;
+            		answer[1] = i+2;
+            		return answer;
+            	}
+            }
+        }
+        for(int i=1;i<=(red/2);i++){
+        	int b =red/i;
+        	int check = (b*2) +(i*2)+4;
+        	int sum = (b+2)*(i+2);
+        	if(brown == check && sum == red+brown){
+        		answer[0] = b+2;
+        		answer[1] = i+2;
+        		return answer;
+        	}
+        }
         return answer;
     }
 

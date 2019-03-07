@@ -2,7 +2,7 @@ package programmers.level2;
 
 import java.util.HashMap;
 
-// 프로그래머스  - 스킬 트리(진행중) / 
+// 프로그래머스  - 스킬 트리(진행중) / 타 블로그 참고
 public class Test_01 {
 
 	public static void main(String[] args) {

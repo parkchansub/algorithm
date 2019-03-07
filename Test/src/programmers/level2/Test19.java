@@ -104,7 +104,6 @@ public class Test19 {
 					answer[1] =	((i+2)/n)+1;
 					return answer;
 				}
-				
 			}
 			else{
 				checkList.put(words[i+1], i+1);
