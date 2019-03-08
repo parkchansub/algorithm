@@ -2,7 +2,7 @@ package programmers.level2;
 
 import java.util.LinkedList;
 
-// 프로그래머스 -
+// 프로그래머스 - (진행중)
 
 	/*
 	문제 설명

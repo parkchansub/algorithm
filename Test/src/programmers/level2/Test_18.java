@@ -1,7 +1,7 @@
 package programmers.level2;
 
 import java.util.LinkedList;
-
+// 프로그래머스 - 구명보트(진행중)
 /*
 	구명보트
 	

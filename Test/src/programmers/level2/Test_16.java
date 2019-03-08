@@ -2,7 +2,7 @@ package programmers.level2;
 
 import java.util.LinkedList;
 
-//프로그래머스 - 프린터
+//프로그래머스 - 프린터(풀이 참고)
 
 	/*
 	문제 설명
