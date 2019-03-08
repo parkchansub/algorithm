@@ -2,7 +2,7 @@ package programmers.level2;
 
 import java.util.LinkedList;
 
-// 프로그래머스 - (진행중)
+// 프로그래머스 - 다리를 지나는  트럭(진행중)
 
 	/*
 	문제 설명
