@@ -21,7 +21,7 @@ package programmers.level2;
 	[3, 30, 34, 5, 9]	9534330
 	
 	*/
-public class Test20 {
+public class Test_20 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

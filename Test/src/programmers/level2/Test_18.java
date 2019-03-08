@@ -25,10 +25,10 @@ import java.util.LinkedList;
 	[70, 80, 50]		 100	  3
 	
 	*/
-public class Test18 {
+public class Test_18 {
 
 	public static void main(String[] args) {
-		Test18 test18 = new Test18();
+		Test_18 test18 = new Test_18();
 		int[] people = new int[]{70,50,80,50};
 		int limit = 100;
 		System.out.println(test18.solution(people, limit));

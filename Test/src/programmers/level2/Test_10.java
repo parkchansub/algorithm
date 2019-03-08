@@ -1,6 +1,6 @@
 package programmers.level2;
 
-
+// 프로그래머스 - 라면공장
 	/*
 	 라면 공장에서는 하루에 밀가루를 1톤씩 사용합니다. 원래 밀가루를 공급받던 공장의 고장으로 앞으로 k일 이후에야 밀가루를 공급받을 수 있기 때문에 해외 공장에서 밀가루를 수입해야 합니다.
 	
@@ -20,7 +20,8 @@ package programmers.level2;
 	dates와 supplies의 길이는 1 이상 20,000 이하입니다.
 	k일 째에는 밀가루가 충분히 공급되기 때문에 k-1일에 사용할 수량까지만 확보하면 됩니다.
 	dates에 들어있는 날짜는 오름차순 정렬되어 있습니다.
-	dates에 들어있는 날짜에 공급되는 밀가루는 작업 시작 전 새벽에 공급되는 것을 기준으로 합니다. 예를 들어 9일째에 밀가루가 바닥나더라도, 10일째에 공급받으면 10일째에는 공장을 운영할 수 있습니다.
+	dates에 들어있는 날짜에 공급되는 밀가루는 작업 시작 전 새벽에 공급되는 것을 기준으로 합니다.
+	예를 들어 9일째에 밀가루가 바닥나더라도, 10일째에 공급받으면 10일째에는 공장을 운영할 수 있습니다.
 	밀가루가 바닥나는 경우는 주어지지 않습니다.
 	
 	입출력 예
@@ -32,12 +33,30 @@ package programmers.level2;
 	
 	현재 밀가루가 4톤 남아 있기 때문에 오늘과 1일 후~3일 후까지 사용하고 나면 모든 밀가루를 다 사용합니다. 따라서 4일 후에는 반드시 밀가루를 공급받아야 합니다.
 	4일째 공급받고 나면 15일 이후 아침에는 9톤의 밀가루가 남아있게 되고, 이때 10톤을 더 공급받으면 19톤이 남아있게 됩니다. 15일 이후부터 29일 이후까지 필요한 밀가루는 15톤이므로 더 이상의 공급은 필요 없습니다.
-	따라서 총 2회의 밀가루를 공급받으면 됩니다.*/
+	따라서 총 2회의 밀가루를 공급받으면 됩니다.
+	*/
 
 public class Test_10 {
 
 	public static void main(String[] args) {
-
+		Test_10 test_10 = new Test_10();
+		int stock = 4;
+		int [] dates = new int[]{4,10,15};
+		int [] supplies = new int[]{20,5,10};
+		int k =30;
+		
+		int stock1 = 8;
+		int [] dates1 = new int[]{4,8,12,15,18,20,25};
+		int [] supplies1 = new int[]{20,5,10,8,12,7,15};
+		int k1 = 30;
+		System.out.println(test_10.solution(stock1, dates1, supplies1, k1));
+		
 	}
-	
+	public int solution(int stock, int[] dates, int[] supplies, int k) {
+		int answer = 0;
+		int date = 0;
+		
+		
+	    return answer;
+	 }	
 }

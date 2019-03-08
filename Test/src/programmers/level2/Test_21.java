@@ -17,6 +17,6 @@ package programmers.level2;
 	[2,6,8,14]	 168
 	[1,2,3]		  6
 	*/
-public class Test21 {
+public class Test_21 {
 
 }

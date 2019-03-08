@@ -69,14 +69,14 @@ import java.util.Map;
 	2번 사람 : one, never, world
 	와 같은 순서로 말을 하게 되며, 1번 사람이 자신의 세 번째 차례에 'r'로 시작하는 단어 대신, n으로 시작하는 now를 말했기 때문에 이때 처음 탈락자가 나오게 됩니다.
 	*/
-public class Test19 {
+public class Test_19 {
 
 	public static void main(String[] args) {
 		String[] a = new String[]{"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
 		String[] b = new String[]{"hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang","gather", "refer", "reference", "estimate", "executive"};
 		String[] d = new String[]{"hello", "one", "even", "never", "now", "world", "draw"};
 		int n = 3;
-		Test19 test20 = new Test19();
+		Test_19 test20 = new Test_19();
 		int[] c = test20.solution(n,a);
 		System.out.println(Arrays.toString(c));
 	}
