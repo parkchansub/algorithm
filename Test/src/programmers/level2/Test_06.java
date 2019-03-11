@@ -1,5 +1,7 @@
 package programmers.level2;
 
+import java.util.Arrays;
+
 // 프로그래머스 - JadenCase 문자열 만들기(런타임 에러)
 
 
@@ -24,8 +26,10 @@ public class Test_06 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Test_06 test6 = new Test_06();
-		String s = "3people unFollowed me";
-		String b= test6.solution(s);
+		String s = "3people unFollowed me ASfsdf adfasdfA123 123123aASFFGGG 1  asdfasdf  ";
+		String s1 = "1231444 123123";
+		String s2 = " ";
+		String b= test6.solution2(s);
 		System.out.println(b);
 	}
 	public String solution(String s) {
@@ -33,8 +37,8 @@ public class Test_06 {
 	    String answer = "";
 	    s = s.toLowerCase();
 	    String[] sList = s.split(" ");
-	    String[] answerList = new String[sList.length];
 	    
+	    String[] answerList = new String[sList.length];
 	    
 	    for(int i=0;i<sList.length;i++) {
 	    	char[] ch = sList[i].toCharArray();
@@ -49,16 +53,29 @@ public class Test_06 {
 	    		answerList[i] = sList[i];
 	    	}
 	    }
-	    
-	    for(int i=0;i<answerList.length;i++){
-	    	if(i==answerList.length-1){
-	    		answer = answer +answerList[i];
-	    	}else{
-	    		answer = answer +answerList[i]+" ";
-	    	}
-	    	
+	    answer = answerList[0];
+	    for(int i=1;i<answerList.length;i++){
+	    		answer = answer+" "+answerList[i];
 	    }
 	    return answer;
 	}
+	
+	 public String solution2(String s) {
+	        s = s.toLowerCase();
+	        String[] a = s.split(" ");
+	        for (int i = 0; i < a.length; i++) {
+	            if(a[i].length() >= 1) {
+	                char[] array = a[i].toCharArray();
+	                array[0] = Character.toUpperCase(array[0]);
+	                a[i] = new String(array);
+	            }
+	        }
+	        
+	        String result = a[0];
+	        for (int i = 1; i < a.length; i++) {
+	            result += " " + a[i];
+	        }
+	        return result;
+	    }
 
 }

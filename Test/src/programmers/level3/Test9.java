@@ -31,7 +31,7 @@ package programmers.level3;
 public class Test9 {
 
 	public static void main(String[] args) {
-		int[] budgets = new int[]{120,110,140,150};
+		int[] budgets = new int[]{120,110,140,150}; 
 		int m = 485;
 		Test9 test9 = new Test9();
 		test9.solution(budgets, m);

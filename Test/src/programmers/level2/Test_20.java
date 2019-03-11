@@ -1,4 +1,7 @@
 package programmers.level2;
+
+import java.util.Arrays;
+
 //프로그래머스 - 가장 큰 수(진행중)
 	/*
 
@@ -24,8 +27,23 @@ package programmers.level2;
 public class Test_20 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Test_20 test_20 = new Test_20();
+		int[] numbers = new int[]{6,10,2};
+		System.out.println(test_20.solution(numbers));
 	}
+	public String solution(int[] numbers) {
+	       String[] arr = new String[numbers.length];
+	       for (int i = 0; i < numbers.length; i++)
+	           arr[i] = String.valueOf(numbers[i]);
+	               Arrays.sort(arr, (o1, o2) -> (o2 + o1).compareTo(o1 + o2));
+	
+	       if(arr[0].equals("0")) return "0";
+	        
+	       StringBuilder sb = new StringBuilder();
+	       for (int i = 0; i < arr.length; i++)
+	           sb.append(arr[i]);
+	
+	       return sb.toString();
+	   }
 
 }
