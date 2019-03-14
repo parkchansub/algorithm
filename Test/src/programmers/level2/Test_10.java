@@ -1,5 +1,6 @@
 package programmers.level2;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -54,7 +55,8 @@ public class Test_10 {
 	}
 	public int solution(int stock, int[] dates, int[] supplies, int k) {
 		int answer = 0;
-		Queue<Integer> queue = new PriorityQueue<Integer>(Comparator.reverseOrder());
+		/*Queue<Integer> queue = new PriorityQueue<Integer>(Comparator.reverseOrder());*/
+		Queue<Integer> queue = new PriorityQueue<Integer>(Collections.reverseOrder());
 		
 		int index = 0;
 		for(int i=0;i<k;i++){

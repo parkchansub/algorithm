@@ -47,6 +47,8 @@ public class Test_25 {
          
         for(String operation : operations) {
            String[] cmd = operation.split(" ");
+           int a = 10;
+           
            if(cmd[0].equals("I")) {
               maxQueue.add(Integer.parseInt(cmd[1]));
               minQueue.add(Integer.parseInt(cmd[1]));
