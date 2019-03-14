@@ -1,5 +1,9 @@
 package programmers.level2;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 // 프로그래머스 - 라면공장(풀의 참고)
 	/*
 	 라면 공장에서는 하루에 밀가루를 1톤씩 사용합니다. 원래 밀가루를 공급받던 공장의 고장으로 앞으로 k일 이후에야 밀가루를 공급받을 수 있기 때문에 해외 공장에서 밀가루를 수입해야 합니다.
@@ -44,19 +48,28 @@ public class Test_10 {
 		int [] dates = new int[]{4,10,15};
 		int [] supplies = new int[]{20,5,10};
 		int k =30;
-		
-		int stock1 = 8;
-		int [] dates1 = new int[]{4,8,12,15,18,20,25};
-		int [] supplies1 = new int[]{20,5,10,8,12,7,15};
-		int k1 = 30;
-		System.out.println(test_10.solution(stock1, dates1, supplies1, k1));
+	
+		System.out.println(test_10.solution(stock, dates, supplies, k));
 		
 	}
 	public int solution(int stock, int[] dates, int[] supplies, int k) {
 		int answer = 0;
-		int date = 0;
+		Queue<Integer> queue = new PriorityQueue<Integer>(Comparator.reverseOrder());
 		
-		
-	    return answer;
+		int index = 0;
+		for(int i=0;i<k;i++){
+			/*if(i==dates[index] && index<dates.length){ 이런식으로 반대로 조건을 걸었을때 오류가 발생이됨 
+			dates라는 배열을 파라메터값으로 배열의 길이가 정해져있는 값인데 인덱스값이 그값을 초과하는 값으로 지정 될수있어서 인것 같음*/
+			if(index<dates.length && i==dates[index]){
+				queue.add(supplies[index++]);
+			}
+			if(stock==0){
+				stock += queue.poll();
+				answer++;
+			}
+			stock -= 1;
+			
+		}
+		return answer;
 	 }	
 }
