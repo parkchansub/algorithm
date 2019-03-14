@@ -30,8 +30,10 @@ public class Test_13 {
 		Test_13 test13 = new Test_13();
 		int[] citations = new int[]{3, 0, 6, 1, 5};
 		int[] citations1 = new int[]{3, 2,7,10,9, 6, 1, 0,5};
-		/*int[] citations = new int[]{0,1,2,3,4,6,7,8,9,10};*/
-		int a = test13.solution(citations);
+		int[] citations2 = new int[]{0,1,2,3,4,6,7,8,9,10};
+		int[] citations3 = new int[]{3,3,3,3};
+		int[] citations4 = new int[]{22,44};
+		int a = test13.solution2(citations3);
 		System.out.println(a);
 	}
 	
@@ -39,7 +41,7 @@ public class Test_13 {
         int answer = 0;
         Arrays.sort(citations);
         if(citations.length%2==0){
-        	answer = citations[citations.length/2-1]+1;
+        	answer = citations[(citations.length/2)-1]+1;
         	return answer;
         }
         for(int i=0;i<citations.length;i++){
@@ -49,5 +51,13 @@ public class Test_13 {
         }
         return answer;
     }
-
+    public int solution2(int[] citations){
+    	int answer = 0;
+    	Arrays.sort(citations);
+    	for(int i=0;i<citations.length;i++){
+    		int smaller = Math.min(citations[i], citations.length-i);
+    		answer = Math.max(answer, smaller);
+    	}
+    	return answer;
+    }
 }
