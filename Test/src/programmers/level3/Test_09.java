@@ -28,12 +28,12 @@ package programmers.level3;
 	
 	*/
 
-public class Test9 {
+public class Test_09 {
 
 	public static void main(String[] args) {
 		int[] budgets = new int[]{120,110,140,150}; 
 		int m = 485;
-		Test9 test9 = new Test9();
+		Test_09 test9 = new Test_09();
 		test9.solution(budgets, m);
 	}
 	public int solution(int[] budgets, int M) {

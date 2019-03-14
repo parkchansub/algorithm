@@ -38,10 +38,10 @@ import java.util.Map;
 	target인 cog는 words 안에 없기 때문에 변환할 수 없습니다.
 	*/
 
-public class Test6 {
+public class Test_06 {
 
 	public static void main(String[] args) {
-		Test6 test6 = new Test6();
+		Test_06 test6 = new Test_06();
 		String begin = "hit";
 		String target = "cog";
 		String[] words = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};

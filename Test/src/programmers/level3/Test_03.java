@@ -31,11 +31,11 @@ import java.util.Arrays;
 	*/
 
 
-public class Test3 {
+public class Test_03 {
 
 	public static void main(String[] args) {
 		
-		Test3 test3 = new Test3();
+		Test_03 test3 = new Test_03();
 		/*String[] operations = new String[]{"I 16","D 1"};*/
 		String[] operations2 = new String[]{"I 7","I 5","I -5","D -1"};
 /*		String[] operations3 = new String[]{"I -45","I 653","D 1","I -642","I 45","I 97","D 1","D -1","I 333"};*/

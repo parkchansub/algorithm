@@ -34,10 +34,10 @@ import java.util.Arrays;
 	n=1일 때, 남은 일의 작업량이 [2,1,2]라면 야근 지수를 최소화하기 위해 1시간동안 일을 한 결과는 [1,1,2]입니다. 야근지수는 12 + 12 + 22 = 6입니다.
 
 	*/
-public class Test5 {
+public class Test_05 {
 
 	public static void main(String[] args) {
-		Test5 test5 = new Test5();
+		Test_05 test5 = new Test_05();
 		int[] works = new int[]{1,1};
 		int n = 3;
 		long a = 0;

@@ -20,10 +20,10 @@ package programmers.level3;
 	n	result
 	4	5
 	*/
-public class Test8 {
+public class Test_08 {
 
 	public static void main(String[] args) {
-		Test8 test8 = new Test8();
+		Test_08 test8 = new Test_08();
 		System.out.println(test8.solution(4));
 	}
 	

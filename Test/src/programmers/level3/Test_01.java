@@ -13,11 +13,11 @@ package programmers.level3;
 	0	0	1	1	3	3
 
 */
-public class Test1 {
+public class Test_01 {
 
 	public static void main(String[] args) {
 		int[][] picture = new int[][]{{1, 1, 1, 0}, {1, 2, 2, 0}, {1, 0, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 3}, {0, 0, 0, 3}};
-		Test1 test1 = new Test1();
+		Test_01 test1 = new Test_01();
 		System.out.println(picture.length);
 		test1.solution(6, 4, picture);
 	}

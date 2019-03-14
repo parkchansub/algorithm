@@ -21,10 +21,10 @@ package programmers.level3;
 	3	[[1, 1, 0], [1, 1, 1], [0, 1, 1]]	  1
 	*/
 
-public class Test7 {
+public class Test_07 {
 
 	public static void main(String[] args) {
-		Test7 test7 = new Test7();
+		Test_07 test7 = new Test_07();
 	}
     public int solution(int n, int[][] computers) {
         int answer = 0;
