@@ -1,8 +1,8 @@
 package programmers.level3;
-// 프로그래머스 - 단어 변환
 
 import java.util.HashMap;
 import java.util.Map;
+//프로그래머스 - 단어 변환
 
 /*
 	문제 설명
@@ -45,7 +45,7 @@ public class Test_06 {
 		String begin = "hit";
 		String target = "cog";
 		String[] words = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
-		test6.solution(begin, target, words);
+		System.out.println(test6.solution(begin, target, words));
 	}
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
