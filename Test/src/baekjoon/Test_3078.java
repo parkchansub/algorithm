@@ -42,12 +42,12 @@ import java.util.LinkedList;
 	2
 	
 	*/
-public class Test3078 {
+public class Test_3078 {
 
 	public static void main(String[] args) {
 		String[] a = new String[]{"CYNTHIA", "LLOYD", "STEVIE", "KEVIN", "MALCOLM", "DABNEY"};
 		int b= 3;
-		Test3078 test3078 = new Test3078();
+		Test_3078 test3078 = new Test_3078();
 		System.out.println(test3078.solution(a, b));
 	}
 	public int solution(String[] a, int b){

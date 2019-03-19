@@ -29,7 +29,7 @@ package baekjoon;
 	3
 	2
 	*/
-public class Test2905 {
+public class Test_2905 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

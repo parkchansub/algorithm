@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
 	 */
 
 
-public class Test1200 {
+public class Test_1200 {
 	
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

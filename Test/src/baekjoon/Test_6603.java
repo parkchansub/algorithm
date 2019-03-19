@@ -20,10 +20,10 @@ import java.util.PriorityQueue;
 	각 테스트 케이스마다 수를 고르는 모든 방법을 출력한다. 이때, 사전 순으로 출력한다.
 	
 	각 테스트 케이스 사이에는 빈 줄을 하나 출력한다.*/
-public class Test6603 {
+public class Test_6603 {
 	
 	public static void main(String[] args) {
-		Test6603 test6603 = new Test6603();
+		Test_6603 test6603 = new Test_6603();
 		int[] s = new int[]{1,2,3,5,8,13,21,34};
 		test6603.solution(s);
 	}

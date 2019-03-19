@@ -42,10 +42,10 @@ import java.util.StringTokenizer;
 
 
 
-public class Test5014 {
+public class Test_5014 {
 	
 	public static void main(String[] args) {
-		Test5014 test5014 = new Test5014();
+		Test_5014 test5014 = new Test_5014();
 		
 		test5014.solution(10, 1, 10, 2, 1);
 	}

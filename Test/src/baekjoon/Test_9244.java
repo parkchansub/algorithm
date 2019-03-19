@@ -14,7 +14,7 @@ package baekjoon;
 	(-1,000,000 ≤ xi, yi ≤ 1,000,000) 마지막 줄에는 공의 맨 처음 x좌표 x0이 주어진다. (-1,000,000 ≤ x0 ≤ 1,000,000) 모든 좌표는 정수이다.
 	
 	*/
-public class Test9244 {
+public class Test_9244 {
 
 	public static void main(String[] args) {
 		

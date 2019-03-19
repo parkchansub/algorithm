@@ -26,10 +26,10 @@ import java.util.LinkedList;
 	
 	
 	*/
-public class Test2164 {
+public class Test_2164 {
 
 	public static void main(String[] args) {
-		Test2164 test2164 = new Test2164();
+		Test_2164 test2164 = new Test_2164();
 		int [] a = new int[]{1,2,3,4,5,6};
 		
 		System.out.println(test2164.queueSort(a));

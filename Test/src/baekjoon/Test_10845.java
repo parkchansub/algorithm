@@ -21,7 +21,7 @@ package baekjoon;
 	
 	출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.
 	*/
-public class Test10845 {
+public class Test_10845 {
 
 	public static void main(String[] args) {
 
