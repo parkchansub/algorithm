@@ -1,5 +1,5 @@
 package programmers.level1;
-//프로그래머스 - 문자열 내 p와 y의 개수
+//프로그래머스 - 문자열 내 p와 y의 개수(완료)
 	/*
 	문제 설명
 	대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. 
@@ -27,8 +27,31 @@ package programmers.level1;
 public class Test_10 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String s = "Pyy";
+		Test_10 test_10 = new Test_10();
+		System.out.println(test_10.solution(s));
 	}
-
-}
+	
+	public boolean solution(String s){
+		boolean answer = true;
+		int yCount = 0;
+		int pCount = 0;
+		
+		char[] b = s.toCharArray();
+		for(int i=0;i<b.length;i++){
+			System.out.println(b[i]);
+			if(b[i]=='p' || b[i]=='P'){
+				
+				pCount++;
+			}
+			if(b[i]=='y' || b[i]=='Y'){
+				yCount++;
+			}
+		}
+		if(pCount != yCount){
+			answer = false;
+		}
+			
+		return answer;
+	}
+}	

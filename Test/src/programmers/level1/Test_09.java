@@ -16,7 +16,7 @@ package programmers.level1;
 	
 	입출력 예
 	
-	answers	return
+	answers		return
 	[1,2,3,4,5]	[1]
 	[1,3,2,4,2]	[1,2,3]
 	
