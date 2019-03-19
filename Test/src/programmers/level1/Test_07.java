@@ -1,11 +1,11 @@
 package programmers.level1;
 import java.util.Arrays;
 // 프로그래머스  문자열 내림 차순으로 배치하기(완료) / 블로그(완료)
-public class Test7 {
+public class Test_07 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Test7 test7 = new Test7();
+		Test_07 test7 = new Test_07();
 		String b = test7.solution("Zbcdefg");
 		System.out.println(b);
 	}

@@ -1,7 +1,7 @@
 package programmers.level1;
 
 // 프로그래머스(다른 사람 풀의 참고)
-public class Test2 {
+public class Test_02 {
 
 	public static void main(String[] args) {
 		

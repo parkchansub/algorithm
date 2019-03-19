@@ -1,11 +1,11 @@
 package programmers.level1;
 import java.util.Arrays;
 // 프로그래머스 -  예산(완료) / 블로그 작성(완료)
-public class Test8 {
+public class Test_08 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Test8 test8 = new Test8();
+		Test_08 test8 = new Test_08();
 		int[] a = new int[]{1,3,2,4,5};
 		int b = test8.solution(a, 9);
 		System.out.println(b);

@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // 프로그래머스 - 완주 못한 선수(완료) / 블로그 작성(완료)
-public class Test3 {
+public class Test_03 {
     
     public static void main(String args[])  {
     	String[] a= new String[] {"leo", "kiki", "eden", "kiki","kiki"};
@@ -12,7 +12,7 @@ public class Test3 {
     	String[] bs  = new String[] {"eden", "kiki"};
     	String[] asd = new String[] {"mislav", "stanko", "ana", "ana", "mislav"};
     	String[] bsd = new String[] {"stanko", "ana", "mislav", "mislav"};
-    	Test3 test1 = new Test3();
+    	Test_03 test1 = new Test_03();
     	
     	String d1 = test1.solution2(asd, bsd);
     	System.out.println(d1);

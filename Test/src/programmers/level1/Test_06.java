@@ -1,12 +1,12 @@
 package programmers.level1;
 // 프로그래머스 가운데 글자 가져오기(완료) / 블로그 작성(완료)
-public class Test6 {
+public class Test_06 {
 
 	public static void main(String[] args) {
 
 		String a= "sadfasdf";
 		String b= "sasdf";
-		Test6 test6 = new Test6();
+		Test_06 test6 = new Test_06();
 		String answer = test6.solution(a);
 		System.out.println(answer);
 		String answer2 = test6.solution(b);

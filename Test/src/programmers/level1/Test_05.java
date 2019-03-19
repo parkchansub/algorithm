@@ -1,12 +1,12 @@
 package programmers.level1;
 // 프로그래머스   수박수박수박수박수박수? (완료) / 블로그 작성(완료)
-public class Test5 {
+public class Test_05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int n = 3;
 		int n2 = 4;
-		Test5 test5 =new Test5();
+		Test_05 test5 =new Test_05();
 		String answer = test5.solution(n2);
 		System.out.println(answer);
 	} 

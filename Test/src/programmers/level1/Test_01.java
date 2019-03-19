@@ -1,10 +1,10 @@
 package programmers.level1;
 // 프로그래머스 - 시저 암호(완료) / 블로그 작성(완료)
-public class Test {
+public class Test_01 {
     
     public static void main(String args[])  {
     	
-    	Test test = new Test();
+    	Test_01 test = new Test_01();
     	String b = test.solution("Z", 1);
     	System.out.println(b);
     }

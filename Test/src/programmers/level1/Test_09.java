@@ -34,7 +34,7 @@ package programmers.level1;
 	모든 사람이 2문제씩을 맞췄습니다.
 	
 	*/
-public class Test9 {
+public class Test_09 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

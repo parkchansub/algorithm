@@ -2,7 +2,7 @@ package programmers.level1;
 import java.util.Arrays;
 
 // 프로그래머스 - 나누어 떨어지는 숫자 배열(완료) / 블로그 작성(완료)
-public class Test4 {
+public class Test_04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -10,7 +10,7 @@ public class Test4 {
 		int[] a = new int[]{5, 9, 7, 10};
 		int[] c = new int[]{3,6,7};
 		int[] d = new int[]{2,36,1,3};
-		Test4 test4 =new Test4();
+		Test_04 test4 =new Test_04();
 		String b= test4.solution(d, 1);
 		System.out.println(b);
 	}
