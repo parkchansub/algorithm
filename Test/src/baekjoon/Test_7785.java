@@ -1,7 +1,9 @@
 package baekjoon;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -33,9 +35,15 @@ public class Test_7785 {
 	public static void main(String[] args) {
 		
 		Test_7785 test_7785 = new Test_7785();
+		Employee employee1 = new Employee("Baha", "enter");
+		Employee employee2 = new Employee("Askar", "enter");
+		Employee employee3 = new Employee("Baha", "leave");
+		Employee employee4 = new Employee("Artem", "enter");
+		Employee[] employeeList = new Employee[]{employee1,employee2,employee3,employee4};
+		System.out.println(test_7785.solution(employeeList));
 	}
 	
-	class Employee{
+	static class Employee{
 		String name;
 		String status;
 	public Employee(String name, String status){
@@ -44,21 +52,16 @@ public class Test_7785 {
 		}
 	}
 	
-	public String[] solution(Employee[] a){
-		String [] answer ={};
+	public List solution(Employee[] a){
+		List<String> answer = new ArrayList<String>();
 		Map<String, String> hashMap = new HashMap<String, String>();
 		for(int i=0;i<a.length;i++){
-			if(hashMap.containsKey(a[i])){
 				hashMap.put(a[i].name, a[i].status);	
-			}
-			else{
-				hashMap.put(a[i].name, a[i].status);
-			}
 		}
 		
 		for(int i=0;i<a.length;i++){
-			if(hashMap.get(a[i]).equals("enter")){
-				
+			if(hashMap.get(a[i].name).equals("enter")){
+				answer.add(a[i].name);
 			}
 		}
 		
@@ -68,7 +71,7 @@ public class Test_7785 {
 	public String[] solution2(String[] a){
 		String [] answer ={};
 		Set<Employee> set = new HashSet<Employee>();
-		
+		set.iterator();
 		return answer;
 	}
 }
