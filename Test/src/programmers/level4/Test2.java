@@ -30,12 +30,24 @@ package programmers.level4;
 public class Test2 {
 	
 	public static void main(String[] args){
+		int n = 6;
+		int[] cores = new int[]{1,2,3};
 		
+		Test2 test2 = new Test2();
+		System.out.println(test2.solution(n, cores));
 	}
 	
 	
-	public void solution() {
+	public int solution(int n, int[] cores) {
+		int answer= 0;
+		int time = 0;
 		
+		for(int i=0;i<=cores.length;i++){
+			if(time%cores[i]==0){
+				
+			}
+		}
+		return answer;
 	}
 	
 
