@@ -1,8 +1,9 @@
 package baekjoon;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 //백준 - 5567번 결혼식
 	/*
@@ -33,36 +34,48 @@ public class Test_5567 {
 
 	public static void main(String[] args) {
 		int n = 6;
-		int[][] friend = new int[][]{{1,2},{1,3},{3,4},{2,3},{4,5}};
+		int[][] friend = new int[][]{{1,2},{1,3},{3,4},{2,3},{4,5},{1,4},{4,6}};
 		Test_5567 test_5567 = new Test_5567();
-		test_5567.solution(n, friend, 0);
+		System.out.println(test_5567.solution2(n, friend));
 	}
-	public int solution(int n,int[][] friend,int count){
+	
+	
+	// 너무 많은 횟수의 반복문을 돌아야 함
+	public int solution(int n,int[][] friend){
 		int answer = 0;
-		List<Integer> inviteList = new ArrayList<Integer>();
+		Set<Integer> inviteList = new HashSet<Integer>();
 		for(int i=0;i<friend.length;i++){
 			if(friend[i][0]==1){
-				System.out.println("one ="+friend[i][1]);
 				inviteList.add(friend[i][1]);
-			}
-		}
-		
-		for(int i=0;i<friend.length;i++){
-			for(int j=0;j<inviteList.size();j++){
-				if(friend[i][0]==inviteList.get(j)){
-					System.out.println("one ="+friend[i][1]);
-					inviteList.add(friend[i][1]);
+				
+				for(int j=0;j<friend.length;j++){
+					if(friend[j][0]==friend[i][1]){
+						inviteList.add(friend[j][1]);
+					}
 				}
 			}
 		}
-		
-		System.out.println(inviteList.toString());
+		answer = inviteList.size();
 
 		return answer;
 	}
-	
-	public int recosion(){
+	public int solution2(int n,int[][] friend){
 		int answer = 0;
+		
+		Map<Integer,String> checkList = new HashMap<Integer,String>();
+		Set<Integer> inviteList = new HashSet<Integer>();
+		for(int i=0;i<friend.length;i++){
+			if(friend[i][0]==1){
+				inviteList.add(friend[i][1]);
+				checkList.put(friend[i][1], "true");
+			}
+		}
+		for(int i=0;i<friend.length;i++){
+			if(inviteList.contains(friend[i][0])){
+				checkList.put(friend[i][1], "true");
+			}
+		}
+		answer = checkList.size();
 		return answer;
 	}
 }
