@@ -29,8 +29,20 @@ package baekjoon;
 public class Test_1654 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int k = 4;
+		int n = 11;
+		int[] lanList = new int[]{802,743,457,539};
+		Test_1654 test_1654 = new Test_1654();
+		int s = test_1654.solution(k, n, lanList);
+		System.out.println(s);
+	}
+	
+	
+	public int solution(int k, int n, int[] lanList){
+		int answer = 0;
+		
+		
+		return answer;
 	}
 
 }
