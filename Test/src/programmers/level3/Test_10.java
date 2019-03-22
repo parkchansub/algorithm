@@ -1,7 +1,8 @@
 package programmers.level3;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 
 //프로그래머스 - 여행경로 
 	/*
@@ -61,18 +62,51 @@ public class Test_10 {
 	public static void main(String[] args) {
 		String[][] tickets = new String[][]{{"ICN","SFO"}, {"ICN","ATL"}, {"SFO","ATL"}, {"ATL","ICN"},{"ATL","SFO"}};
 		Test_10 test_10 = new Test_10();
-		test_10.solution(tickets);
-		
-		
+		System.out.println(test_10.solution(tickets));
 	}
-    public String[] solution(String[][] tickets) {
-        String[] answer = {};
-        Queue queue = new LinkedList<String[]>();
+    public List<String> solution(String[][] tickets) {
+        List<String> answer = new ArrayList<String>();
+        LinkedList<String[]> linkedList = new LinkedList<String[]>();
         for(int i=0;i<tickets.length;i++){
-        	queue.add(tickets[i]);
+        	linkedList.add(tickets[i]);
         }
         
+        String start = "ICN";
+        answer.add(start);
+        answer = recosion(start, linkedList, answer);
+        
         return answer;
+    }
+    
+    public List<String> recosion(String start, LinkedList<String[]> linkedList,List<String> answer){
+    	
+    	int index = linkedList.size();
+    	if(index==0){
+    		return answer;
+    	}
+    	String end = "";
+    	for(int i=1;i<index;i++){
+    		String [] temp = linkedList.removeFirst();
+    		if(start==temp[0]){
+    			if(end==""||end.compareTo(temp[1])<0){
+    				if(end==""){
+    					end = temp[1];
+    				}
+    				else{
+    					linkedList.addLast(new String[]{start, end});
+    					end = temp[1];
+    				}
+    			}else{
+    				linkedList.addLast(temp);
+    			}
+    		}else{
+    			linkedList.addLast(temp);
+    		}
+    			
+    	}
+    	answer.add(end);
+    	start = end;
+    	return recosion(start,linkedList,answer);
     }
     
     
