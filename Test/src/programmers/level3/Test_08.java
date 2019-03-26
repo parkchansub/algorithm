@@ -24,22 +24,23 @@ public class Test_08 {
 
 	public static void main(String[] args) {
 		Test_08 test8 = new Test_08();
-		System.out.println(test8.solution(4));
+		System.out.println(test8.solution(5));
+		
 	}
 	
 	public int solution(int n) {
 	    int answer = 0;
-	    answer = recosion(n,0);
+	    answer = recosion(n,0,"");
 	    return answer;
 	}	
-	public int recosion(int n, int sum){
-		
+	public int recosion(int n, int sum, String sumList){
 		if(sum>n){
+			System.out.println(sumList);
 			return 0;
 		}
 		if(sum==n){
 			return 1;	
 		}
-		return recosion(n, sum+2) + recosion(n,sum+1);
+		return recosion(n, sum+2, sumList+"+2") + recosion(n,sum+1,sumList+"+1");
 	}
 }

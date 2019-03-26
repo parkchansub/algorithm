@@ -34,11 +34,23 @@ public class Test_09 {
 		int[] budgets = new int[]{120,110,140,150}; 
 		int m = 485;
 		Test_09 test9 = new Test_09();
-		test9.solution(budgets, m);
+		
+		System.out.println(test9.solution(budgets, m));
 	}
 	public int solution(int[] budgets, int M) {
-        int answer = 0;
-        return answer;
+        
+        int average = M/(budgets.length);
+        int sum = 0;
+        int count = budgets.length;
+        for(int i=0;i<budgets.length;i++){
+        	if(budgets[i]<average){
+        		sum = sum +(average-budgets[i]);
+        		count--;
+        		
+        	}
+        }
+        average = average +(sum/count);
+        return average;
     }
 
 }
