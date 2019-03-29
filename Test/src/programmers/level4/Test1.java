@@ -1,5 +1,7 @@
 package programmers.level4;
 
+import java.util.LinkedList;
+
 // 프로그래머스 - 카드게임(진행중)
 
 	/*
@@ -45,14 +47,31 @@ public class Test1 {
 		System.out.println(a);
 	}
 
-	public int solution(int[] left, int[] right) {
+	
+	public int solution(int[] left, int[] right){
+		int answer = 0;
+		LinkedList<Integer> leftList = new LinkedList<Integer>();
+		LinkedList<Integer> rightList = new LinkedList<Integer>();
+		
+		for(int i=0;i<left.length;i++){
+			leftList.add(left[i]);
+			rightList.add(right[i]);
+		}
+		
+		while(leftList.isEmpty() && rightList.isEmpty()){
+			leftList.getFirst(); 
+		}
+		return answer;
+	}
+	
+/*	public int solution(int[] left, int[] right) {
 	    int answer = 0;
 	    
-	    answer = dfs(left, right, 0, 0, 0);
+	    answer = recosion(left, right, 0, 0, 0);
 	    return answer;
 	     
 	}
-	public int dfs(int[] left, int[] right, int sum, int i, int j){
+	public int recosion(int[] left, int[] right, int sum, int i, int j){
 		
 		if(j<right.length && left[i]>right[j]){
 			sum = sum + right[j];
@@ -63,11 +82,11 @@ public class Test1 {
 		
 		if(left[i]<=right[j] && i<left.length){
 			i++;
-			return dfs(left,right, sum, i, j);
+			return recosion(left,right, sum, i, j);
 		}
 		
-		return dfs(left,right, sum, i, j+1);
-	}
+		return recosion(left,right, sum, i, j+1);
+	}*/
 	    
 	    
 }

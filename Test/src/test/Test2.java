@@ -6,6 +6,10 @@ public class Test2 {
 		Test2 test2 = new Test2();
 		String a = "ASFGGGG";
 		System.out.println(test2.test(a));
+		
+		
+		int b = 200000;
+		System.out.println(b);
 	}
 	public String test(String a){
 		String answer ="";
