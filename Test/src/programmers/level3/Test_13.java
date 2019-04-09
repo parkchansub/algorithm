@@ -38,9 +38,14 @@ public class Test_13 {
 	 public long solution(int n, int[] times) {
 	        long answer = 0;
 	        
-	        
-	        
-	        
+	        while(n>0){
+	        	answer++;
+	        	for(int i=0;i<times.length;i++){
+	        		if(answer%times[i]==0 && n!=0){
+	        			n--;
+	        		}
+	        	}
+	        }
 	        
 	        return answer;
 	    }
