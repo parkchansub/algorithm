@@ -1,4 +1,7 @@
 package programmers.level3;
+
+import java.util.Arrays;
+
 // 프로그래머스 - 입국심사(진행중)
 	/*
 	문제 설명
@@ -30,23 +33,29 @@ public class Test_13 {
 	
 	public static void main(String[] args){
 		int n = 6;
-		int[] times = new int[]{7,10};
+		int[] times = new int[]{7,10,30};
 		
 		Test_13 test_13 = new Test_13();
 		System.out.println(test_13.solution(n, times));
 	}
 	 public long solution(int n, int[] times) {
-	        long answer = 0;
-	        
+		 	int count = 0;
+		 	Arrays.sort(times);
+	        long answer = times[0]-1;
 	        while(n>0){
 	        	answer++;
+	        	count++;
 	        	for(int i=0;i<times.length;i++){
+	        		count++;
 	        		if(answer%times[i]==0 && n!=0){
 	        			n--;
+	        			if(n==0){
+	        				 return answer;
+	        			}
 	        		}
 	        	}
 	        }
-	        
+	        System.out.println("count = "+count);
 	        return answer;
 	    }
 }
