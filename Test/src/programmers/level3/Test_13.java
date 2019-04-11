@@ -41,21 +41,18 @@ public class Test_13 {
 	 public long solution(int n, int[] times) {
 		 	int count = 0;
 		 	Arrays.sort(times);
-	        long answer = times[0]-1;
+	        long answer = (long) times[0]-1;
 	        while(n>0){
 	        	answer++;
-	        	count++;
-	        	for(int i=0;i<times.length;i++){
-	        		count++;
+	        	for(int i=0;i<times.length && n!=0;i++){
+	        		if(times[i]>answer){
+	        			break;
+	        		}
 	        		if(answer%times[i]==0 && n!=0){
 	        			n--;
-	        			if(n==0){
-	        				 return answer;
-	        			}
 	        		}
 	        	}
 	        }
-	        System.out.println("count = "+count);
 	        return answer;
 	    }
 }
