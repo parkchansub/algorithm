@@ -21,50 +21,49 @@ public class EnumTest {
 		gender2 = Gender.FEMALE;
 		gender2 = Gender.MALE;
 		
-		
-		
-		Pattern pattern;
-		
-		pattern = Pattern.CLUB;
-		
-		System.out.println(pattern.getNumber());
-		
 		Drink drink;
 		
 		drink = Drink.AMERICANO;
 		
+		
+		
 		System.out.println(drink.getName());
 		System.out.println(drink.getCost());
+		
+		Pattern pattern=Pattern.CLUB;
+		System.out.println(pattern);
+		
 	}
 
+	
+	
+	public enum Pattern{
+		SPADE("s"),
+		HEART("h"),
+		DIAMOND("d"),
+		CLUB("c");
+		private final String value;
+		
+		Pattern(String v){
+			value=v;
+		}
+		
+		public static Pattern fromValue(String v){
+			for(Pattern p:Pattern.values()){
+				if(p.value.equals(v)){
+					return p;
+				}
+			}
+			throw new IllegalArgumentException(v);
+		}
+	}
 }
 
 enum Gender{
 	MALE,FEMALE;
 }
 
-enum Pattern{
-	SPADE("spade" , "12"),
-	HEART("heart","13"),
-	DIAMOND("diamond","14"),
-	CLUB("club","15");
-	
-	private String value;
-	private String number;
-	Pattern(){}
-	
-	Pattern(String value, String number){
-		this.value=value;
-		this.number=number;
-	}
-	public String getNumber() {
-		return number;
-	}
-	public String getValue() {
-		return value;
-	}
-	
-}
+
 
 
 
@@ -90,4 +89,6 @@ enum Drink{
 	public String getName() {
 		return name;
 	}
+	
+	
 }
