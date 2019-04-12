@@ -1,5 +1,8 @@
 package programmers.level4;
 
+import java.util.Arrays;
+
+//프로그래머스 - 선입 선출 스케줄링(정확성 테스트 통과 / 효율성 테스트 실패)
 	/*
 	문제 설명
 	처리해야 할 동일한 작업이 n 개가 있고, 이를 처리하기 위한 CPU가 있습니다.
@@ -30,8 +33,8 @@ package programmers.level4;
 public class Test2 {
 	
 	public static void main(String[] args){
-		int n = 6;
-		int[] cores = new int[]{1,2,3};
+		int n = 15;
+		int[] cores = new int[]{10,20,30};
 		
 		Test2 test2 = new Test2();
 		System.out.println(test2.solution(n, cores));
@@ -41,14 +44,21 @@ public class Test2 {
 	public int solution(int n, int[] cores) {
 		int answer= 0;
 		int time = 0;
-		
-		for(int i=0;i<=cores.length;i++){
-			if(time%cores[i]==0){
-				
+		int count =0;
+		n = n-cores.length;
+		Arrays.sort(cores);
+		while(n>0){
+			time++;
+			for(int i=0;i<cores.length;i++){
+				if(time%cores[i]==0){
+					n--;
+					if(n==0){
+						System.out.println(count);
+						return i+1;
+					}
+				}
 			}
 		}
 		return answer;
 	}
-	
-
 }

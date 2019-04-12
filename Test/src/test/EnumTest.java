@@ -1,7 +1,5 @@
 package test;
 
-import org.junit.Test;
-
 public class EnumTest {
 	public static final String MALE = "MALE";
 	public static final String FEMALE = "FEMALE";

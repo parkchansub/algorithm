@@ -44,15 +44,18 @@ public class Test_13 {
 	        long answer = (long) times[0]-1;
 	        while(n>0){
 	        	answer++;
+	        	count++;
 	        	for(int i=0;i<times.length && n!=0;i++){
+	        		count++;
 	        		if(times[i]>answer){
 	        			break;
 	        		}
-	        		if(answer%times[i]==0 && n!=0){
+	        		if(answer%times[i]==0){
 	        			n--;
 	        		}
 	        	}
 	        }
+	        System.out.println(count);
 	        return answer;
 	    }
 }
