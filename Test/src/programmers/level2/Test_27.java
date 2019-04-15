@@ -2,7 +2,7 @@ package programmers.level2;
 
 import java.util.LinkedList;
 
-//프로그래머스 - 짝지어 제거하기
+//프로그래머스 - 짝지어 제거하기(시간 초과)
 	/*
 	문제 설명
 	짝지어 제거하기는, 알파벳 소문자로 이루어진 문자열을 가지고 시작합니다. 
@@ -36,6 +36,9 @@ public class Test_27 {
 
 	public static void main(String[] args) {
 		String s = "baabaa";
+		
+		Test_27 test_27 = new Test_27();
+		System.out.println(test_27.solution(s));
 	}
 	
 	public int solution(String s){
@@ -50,18 +53,22 @@ public class Test_27 {
 		return answer;
 	}
 	public int sameCharDelete(LinkedList<String> answerList){
-		String check = answerList.removeFirst();
-		int i=0;
-		while(i<answerList.size()){
-			if(check.equals(answerList.peek())){
+		if(answerList.size()==0){
+			return 1;
+		}
+		String first = answerList.removeFirst();
+		LinkedList<String> checkList = new LinkedList<String>();
+		while(!answerList.isEmpty()){
+			if(first.equals(answerList.peekFirst())){
 				answerList.removeFirst();
-				check = answerList.removeFirst();
-				i=0;
+				while(!answerList.isEmpty()){
+					 checkList.add(answerList.removeFirst());
+				}
+				return sameCharDelete(checkList);
 			}else{
-				
+				checkList.add(first);
+				first = answerList.removeFirst();
 			}
-				
-			i++;
 		}
 		return 0;
 	}
