@@ -1,6 +1,8 @@
 package programmers.level2;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 //프로그래머스 - 짝지어 제거하기(시간 초과)
 	/*
@@ -38,9 +40,38 @@ public class Test_27 {
 		String s = "baabaa";
 		
 		Test_27 test_27 = new Test_27();
-		System.out.println(test_27.solution(s));
+		System.out.println(test_27.solution2(s));
 	}
 	
+	//ArrayList
+	public int solution2(String s){
+		int answer = 0;
+		
+		char[] charList = s.toCharArray();
+		List<Character> arrayList = new ArrayList<>();
+		for(char c : charList){
+			recosion(arrayList, c);
+		}
+		
+		if(arrayList.isEmpty()){
+			answer = 1;
+		}
+		
+		
+		return answer;
+	}
+	
+	public void recosion(List<Character> arrayList, char c){
+		arrayList.add(c);
+		if(arrayList.size()>1 && arrayList.get(arrayList.size()-2) == arrayList.get(arrayList.size()-1)){
+			arrayList.remove(arrayList.size()-1);
+			arrayList.remove(arrayList.size()-1);
+		}
+		
+	}
+	
+	
+	//LinkedList
 	public int solution(String s){
 		int answer = 0;
 		
@@ -52,6 +83,8 @@ public class Test_27 {
 		answer = sameCharDelete(answerList);
 		return answer;
 	}
+	
+	
 	public int sameCharDelete(LinkedList<String> answerList){
 		if(answerList.size()==0){
 			return 1;
