@@ -7,7 +7,9 @@ public class EnumTest {
 	
 	public static void main(String[] args) {
 		Pattern pattern = Pattern.CLUB;
-		System.out.println(pattern.value);
+		
+		System.out.println(pattern.valueOf("SPADE"));
+		
 		
 		Flag flag = Flag.N;
 		System.out.println(flag.getTable1Value());

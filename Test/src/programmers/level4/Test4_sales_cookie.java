@@ -30,7 +30,6 @@ package programmers.level4;
 public class Test4_sales_cookie {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 	
