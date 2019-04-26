@@ -1,4 +1,4 @@
-package chapter3;
+package doit.chapter3;
 
 import java.util.Scanner;
 // 선형 검색
