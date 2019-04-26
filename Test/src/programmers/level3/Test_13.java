@@ -39,14 +39,11 @@ public class Test_13 {
 		System.out.println(test_13.solution(n, times));
 	}
 	 public long solution(int n, int[] times) {
-		 	int count = 0;
 		 	Arrays.sort(times);
-	        long answer = (long) times[0]-1;
+	        long answer = times[0]-1;
 	        while(n>0){
 	        	answer++;
-	        	count++;
 	        	for(int i=0;i<times.length && n!=0;i++){
-	        		count++;
 	        		if(times[i]>answer){
 	        			break;
 	        		}
@@ -55,7 +52,6 @@ public class Test_13 {
 	        		}
 	        	}
 	        }
-	        System.out.println(count);
 	        return answer;
 	    }
 }
