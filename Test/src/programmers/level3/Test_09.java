@@ -1,5 +1,7 @@
 package programmers.level3;
-	
+
+import java.util.Arrays;
+
 //프로그래머스 - 예산 
 	/*
 	문제 설명
@@ -31,26 +33,37 @@ package programmers.level3;
 public class Test_09 {
 
 	public static void main(String[] args) {
-		int[] budgets = new int[]{120,110,140,150}; 
-		int m = 485;
+		int[] budgets = new int[]{125,118,140,150,160, 170, 200, 250, 220}; 
+		
+		int m = 2500;
 		Test_09 test9 = new Test_09();
 		
 		System.out.println(test9.solution(budgets, m));
 	}
 	public int solution(int[] budgets, int M) {
-        
-        int average = M/(budgets.length);
-        int sum = 0;
-        int count = budgets.length;
-        for(int i=0;i<budgets.length;i++){
-        	if(budgets[i]<average){
-        		sum = sum +(average-budgets[i]);
-        		count--;
-        		
-        	}
-        }
-        average = average +(sum/count);
-        return average;
+		int firstSum = 0;
+		Arrays.sort(budgets);
+		for(int buget:budgets){
+			firstSum = firstSum + buget;
+		}
+		if(M<firstSum){
+			
+			int average = M/(budgets.length);
+			int sum = 0;
+			int count = 0;
+			for(int i=0;i<budgets.length;i++){
+				if(budgets[i]<=average){
+					sum = sum+budgets[i];
+					count++;
+				}else{
+					break;
+				}
+			}
+			average = (M-sum)/(budgets.length-count);
+			return  average;
+		}else{
+			return budgets[budgets.length-1];
+		}
     }
 
 }
