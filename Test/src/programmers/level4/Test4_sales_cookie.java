@@ -30,11 +30,90 @@ package programmers.level4;
 public class Test4_sales_cookie {
 
 	public static void main(String[] args) {
-
+		int[] cookie = new int[]{1,1,2,3};
+		Test4_sales_cookie test4_sales_cookie = new Test4_sales_cookie();
+		System.out.println(test4_sales_cookie.solution(cookie));
 	}
 	
     public int solution(int[] cookie) {
         int answer = -1;
+        int mid = 0;
+        int firstSun = 0;
+        int secondSun = 0;
+        int end = cookie.length-1;
+        while(firstSun==secondSun||secondSun !=0){
+        	firstSun = 0;
+        	secondSun = 0;
+        	for(int i = 0 ; i<=end ; i++){
+        		if(mid>=i){
+        			firstSun = firstSun + cookie[i];
+        		}
+        		else{
+        			secondSun = secondSun + cookie[i];
+        		}
+        	}
+        	if(firstSun>secondSun){
+        		System.out.println("firstSun:"+firstSun);
+        		System.out.println("secondSun:"+secondSun);
+        		System.out.println("mid++");
+        		mid++;
+        	}
+        	if(firstSun<secondSun){
+        		System.out.println("firstSun:"+firstSun);
+        		System.out.println("secondSun:"+secondSun);
+        		System.out.println("end--");
+        		end--;
+        	}
+        	if(mid==end){
+        		return 0;
+        	}
+        	if(firstSun==secondSun){
+        		System.out.println(secondSun);
+        		return firstSun;
+        	}
+        }
+        
+        return answer;
+    }
+    // 타블로그 참고
+    public int solution2(int[] cookie) {
+        int answer = -1;
+        int max = 0;
+
+        if(cookie.length < 2) return 0;
+        if(cookie.length == 2) {
+            if(cookie[0] == cookie[1]) return cookie[0];
+            else return 0;
+        }
+
+        for(int i = 0; i < cookie.length - 1; i++) {
+
+            int frontSum = cookie[i];
+            int indexOfFrontSum = i;
+
+            int backSum = cookie[i+1];
+            int indexOfBackSum = i+1;
+
+            while(true) {
+
+                if(frontSum == backSum) max = Math.max(frontSum, max);
+
+                if(indexOfFrontSum > 0 && frontSum <= backSum) {
+                    indexOfFrontSum--;
+                    frontSum += cookie[indexOfFrontSum];
+                }
+
+                else if(indexOfBackSum < cookie.length - 1 && frontSum >= backSum) {
+                    indexOfBackSum++;
+                    backSum += cookie[indexOfBackSum];
+                }
+
+                else break;
+            }
+
+        }
+
+        answer = max;
         return answer;
     }
 }
