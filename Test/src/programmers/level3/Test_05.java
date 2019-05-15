@@ -38,29 +38,57 @@ public class Test_05 {
 
 	public static void main(String[] args) {
 		Test_05 test5 = new Test_05();
-		int[] works = new int[]{1,1};
-		int n = 3;
-		long a = 0;
-		a = test5.solution(n, works);
+		int[] works = new int[]{4,3,3};
+		int n = 4;
+		long a = test5.solution(n, works);
 		System.out.println(a);
 	}
 	
+	public long solution2(int n, int[] works) {
+		long answer = 0;
+		int sum = 0;
+		for (int work : works) {
+			sum = sum + work;
+		}
+		if (sum > n) {
+			while (n != 0) {
+				Arrays.sort(works);
+				works[works.length - 1]--;
+				n--;
+				if (n == 0) {
+					for (int i = 0; i < works.length; i++) {
+						answer = answer + works[i] * works[i];
+					}
+					return answer;
+				}
+			}
+		}
+		return answer;
+	}
+    
     public long solution(int n, int[] works){
-        long answer = 0;
-        
-        Arrays.sort(works);
-        
-        if(n==0 || works[works.length-1] ==0){
-        	for(int i = 0;i<works.length;i++){
-        		answer = answer +works[i]*works[i];
-        	}
-        	return answer;
-        }
-        works[works.length-1]--;
-        n--;
-
-        return solution(n , works);
-
+    	long answer = 0;
+    	int sum =0;
+    	for(int work : works){
+    		sum = sum +work;
+    	}
+    	if(sum>n){
+    		Arrays.sort(works);
+    		if(n==0){
+    			for(int i = 0;i<works.length;i++){
+    				answer = answer +works[i]*works[i];
+    			}
+    			return answer;
+    		}
+    		works[works.length-1]--;
+    		n--;
+    		
+    		return solution(n , works);
+    	}
+    	else{
+    		return 0;
+    	}
+    	
     }
 
 }

@@ -47,6 +47,29 @@ public class Test_06 {
 		String[] words = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
 		System.out.println(test6.solution(begin, target, words));
 	}
+	
+	public int solution2(String begin, String target, String[] words) {
+		int answer = 0;
+		
+		char[] beginList = begin.toCharArray();
+		for(int i=0;i<words.length;i++){
+				char[] compare = words[i].toCharArray();
+				int count =0;
+				for(int j=0;j<compare.length;j++){
+					if(beginList[j]==compare[j]){
+						count++;
+					}
+				}
+				if(count==2){
+					break;
+				};
+		}
+		
+		return answer;
+	}
+	
+	
+	
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
 

@@ -3,7 +3,7 @@ package programmers.level3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-//프로그래머스 - 이중우선순위큐
+//프로그래머스 - 이중우선순위큐(완료)/ 블로그(완료)
 /*
 	이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.
 	
@@ -33,13 +33,15 @@ import java.util.List;
 	*/
 
 
-public class Test_03 {
+public class Dualpriorityqueues {
 
 	public static void main(String[] args) {
 		
-		Test_03 test3 = new Test_03();
+		Dualpriorityqueues dualpriorityqueues = new Dualpriorityqueues();
 		String[] operations = new String[]{"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
-		int[] as= test3.solution(operations);
+		int[] dpq= dualpriorityqueues.solution(operations);
+		System.out.println(dpq[0]);
+		System.out.println(dpq[1]);
 	}
 	
 	
