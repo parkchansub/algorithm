@@ -1,7 +1,9 @@
 package programmers.level3;
 
-import java.util.Arrays;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+//프로그래머스 - 이중우선순위큐
 /*
 	이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.
 	
@@ -36,60 +38,40 @@ public class Test_03 {
 	public static void main(String[] args) {
 		
 		Test_03 test3 = new Test_03();
-		/*String[] operations = new String[]{"I 16","D 1"};*/
-		String[] operations2 = new String[]{"I 7","I 5","I -5","D -1"};
-/*		String[] operations3 = new String[]{"I -45","I 653","D 1","I -642","I 45","I 97","D 1","D -1","I 333"};*/
-		
-		int[] as= test3.solution(operations2);
-		
-		System.out.println(as[0]);
-		System.out.println(as[1]);
+		String[] operations = new String[]{"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
+		int[] as= test3.solution(operations);
 	}
+	
 	
     public int[] solution(String[] operations) {
         int[] answer = new int[2];
-        int[] heap = new int[5];
-        int[] heap2 = new int[3];
-        int j = 0;
+        List<Integer> heap = new ArrayList<Integer>();
         for(int i=0;i<operations.length;i++){
         	String[] a = operations[i].split(" ");
-        	System.out.println(a[0]);
         	if(a[0].equals("I")){
-        		System.out.println("in");
-        			heap[j] = Integer.parseInt(a[1]);
-        			System.out.println(heap[j]);
-        			j++;
-        			Arrays.sort(heap);
-        			System.out.println(Arrays.toString(heap));
+       			heap.add(Integer.parseInt(a[1]));
+       			Collections.sort(heap);
         	}
-        	if(a[0].equals("D")){
+        	if(a[0].equals("D")&&heap.size()>0){
         		if(a[1].equals("1")){
-        			for(int k=0;k<heap.length-1;k++){
-        				heap2[k] = heap[k];
-        			}
+        			System.out.println("D 1 : "+heap.get(0));
+        			heap.remove(heap.size()-1);
+        			
         		}
-        		else{
-        			for(int k=0;k<heap.length-1;k++){
-        				heap2[k] = heap[k+1];
-        			}
+        		if(a[1].equals("-1")){
+        			System.out.println("D -1 : "+heap.get(heap.size()-1));
+        			heap.remove(0);
         		}
         	}
         }
-        if(heap2.length>0){
-        	System.out.println("out");
-        	System.out.println("heap2[0] :"+heap2[0]);
-        	System.out.println("heap2[1] :"+heap2[heap2.length-1]);
-        	answer[0] = heap2[0];
-            answer[1] = heap2[heap2.length-1];	
+        if(heap.size()!=0){
+        	answer[0] = heap.get(heap.size()-1);
+        	answer[1] = heap.get(0);
         }
         else{
-        	answer[0] = 0;
-            answer[1] = 0;
+        	heap.add(0);
+        	heap.add(0);
         }
-        
-        
-        
         return answer;
     }
-
 }
