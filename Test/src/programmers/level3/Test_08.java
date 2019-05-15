@@ -24,14 +24,17 @@ public class Test_08 {
 
 	public static void main(String[] args) {
 		Test_08 test8 = new Test_08();
-		System.out.println(test8.solution(4));
+		System.out.println(test8.solution(100
+				));
 		
 	}
 	
 	public int solution(int n) {
 	    int answer = 0;
-	    answer = recosion(n,0,"");
-	    int sum = 0;
+	    int count = 0;
+	    /*count=recosion(n,0,"");*/
+	    count=dfs(n,0);
+	    answer = count%1000000007;
 	    
 	    /*while(){
 	    	
@@ -39,6 +42,16 @@ public class Test_08 {
 	    	
 	    return answer;
 	}	
+	
+	public int dfs(int n, int sum){
+		if(sum>n){
+			return 0;
+		}
+		if(sum==n){
+			return 1;	
+		}
+		return dfs(n, sum+2) + dfs(n,sum+1);
+	}
 	public int recosion(int n, int sum, String sumList){
 		if(sum>n){
 			return 0;

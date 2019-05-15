@@ -40,14 +40,14 @@ public class Test_13 {
 	}
 	 public long solution(int n, int[] times) {
 		 	Arrays.sort(times);
+		 	/*if(times.length>=n){
+		 		return times[times.length-1];
+		 	}*/
 	        long answer = times[0]-1;
 	        while(n>0){
 	        	answer++;
 	        	for(int i=0;i<times.length && n!=0;i++){
-	        		if(times[i]>answer){
-	        			break;
-	        		}
-	        		if(answer%times[i]==0){
+	          		if(answer%times[i]==0){
 	        			n--;
 	        		}
 	        	}
