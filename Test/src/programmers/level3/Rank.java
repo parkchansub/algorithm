@@ -22,10 +22,13 @@ package programmers.level3;
 	2번 선수는 [1, 3, 4] 선수에게 패배했고 5번 선수에게 승리했기 때문에 4위입니다.
 	5번 선수는 4위인 2번 선수에게 패배했기 때문에 5위입니다.
 	*/
-public class Test_15 {
+public class Rank {
 
 	public static void main(String[] args) {
-
+		Rank rank = new Rank();
+		int[][]results = new int[][]{{4, 3}, {4, 2}, {3, 2}, {1, 2}, {2, 5}};
+		int n = 5;
+		rank.solution(n, results);
 	}
 	
     public int solution(int n, int[][] results) {

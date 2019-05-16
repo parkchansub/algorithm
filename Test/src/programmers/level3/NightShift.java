@@ -34,21 +34,23 @@ import java.util.Arrays;
 	n=1일 때, 남은 일의 작업량이 [2,1,2]라면 야근 지수를 최소화하기 위해 1시간동안 일을 한 결과는 [1,1,2]입니다. 야근지수는 12 + 12 + 22 = 6입니다.
 
 	*/
-public class Test_05 {
+public class NightShift {
 
 	public static void main(String[] args) {
-		Test_05 test5 = new Test_05();
-		int[] works = new int[]{4,3,3};
-		int n = 4;
-		long a = test5.solution(n, works);
+		NightShift nightShift = new NightShift();
+		int[] works = new int[]{20000,20000,20000};
+		int n = 50000;
+		long a = nightShift.solution2(n, works);
 		System.out.println(a);
 	}
+	
+	
 	
 	public long solution2(int n, int[] works) {
 		long answer = 0;
 		int sum = 0;
 		for (int work : works) {
-			sum = sum + work;
+			sum += work;
 		}
 		if (sum > n) {
 			while (n != 0) {
@@ -56,8 +58,8 @@ public class Test_05 {
 				works[works.length - 1]--;
 				n--;
 				if (n == 0) {
-					for (int i = 0; i < works.length; i++) {
-						answer = answer + works[i] * works[i];
+					for(long work : works){
+						answer +=   work*work;
 					}
 					return answer;
 				}
@@ -70,7 +72,7 @@ public class Test_05 {
     	long answer = 0;
     	int sum =0;
     	for(int work : works){
-    		sum = sum +work;
+    		sum += work;
     	}
     	if(sum>n){
     		Arrays.sort(works);
@@ -82,7 +84,6 @@ public class Test_05 {
     		}
     		works[works.length-1]--;
     		n--;
-    		
     		return solution(n , works);
     	}
     	else{

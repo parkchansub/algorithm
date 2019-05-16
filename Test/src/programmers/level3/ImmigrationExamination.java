@@ -29,20 +29,20 @@ import java.util.Arrays;
 	
 	*/
 
-public class Test_13 {
+public class ImmigrationExamination {
 	
 	public static void main(String[] args){
 		int n = 6;
 		int[] times = new int[]{7,10,30};
 		
-		Test_13 test_13 = new Test_13();
-		System.out.println(test_13.solution(n, times));
+		ImmigrationExamination examination = new ImmigrationExamination();
+		System.out.println(examination.solution(n, times));
 	}
 	 public long solution(int n, int[] times) {
 		 	Arrays.sort(times);
-		 	/*if(times.length>=n){
+		 	if(times.length>=n){
 		 		return times[times.length-1];
-		 	}*/
+		 	}
 	        long answer = times[0]-1;
 	        while(n>0){
 	        	answer++;
