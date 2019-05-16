@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-//프로그래머스 - 짝지어 제거하기(시간 초과)
+//프로그래머스 - 짝지어 제거하기(타블로그 참조)
 	/*
 	문제 설명
 	짝지어 제거하기는, 알파벳 소문자로 이루어진 문자열을 가지고 시작합니다. 
