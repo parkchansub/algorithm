@@ -1,5 +1,6 @@
 package programmers.level2;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 // 프로그래머스 - 구명보트(진행중)
 /*
@@ -35,9 +36,16 @@ public class Test_18 {
 	}
 	
     public int solution(int[] people, int limit) {
-    	LinkedList<Integer> queue = new LinkedList<Integer>();
     	int count = 0;
+    	Arrays.sort(people);
     	
+    	int campare=limit-people[0];
+    	
+    	for(int i=0;i<people.length;i++){
+    		if(campare<people[i]){
+    			count++;
+    		}
+    	}
         
         return count;
     }
