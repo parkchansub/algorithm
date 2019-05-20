@@ -2,7 +2,7 @@ package programmers.level3;
 
 import java.util.ArrayList;
 import java.util.List;
-//프로그래머스 - 단어 변환
+//프로그래머스 - 단어 변환(완료) / 블로그(완료)
 
 /*
 	문제 설명
