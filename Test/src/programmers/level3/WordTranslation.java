@@ -1,7 +1,7 @@
 package programmers.level3;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 //프로그래머스 - 단어 변환
 
 /*
@@ -38,70 +38,56 @@ import java.util.Map;
 	target인 cog는 words 안에 없기 때문에 변환할 수 없습니다.
 	*/
 
-public class Test_06 {
+public class WordTranslation {
 
 	public static void main(String[] args) {
-		Test_06 test6 = new Test_06();
+		WordTranslation wordTranslation = new WordTranslation();
 		String begin = "hit";
 		String target = "cog";
 		String[] words = new String[]{"hot", "dot", "dog", "lot", "log", "cog"};
-		System.out.println(test6.solution(begin, target, words));
-	}
-	
-	public int solution2(String begin, String target, String[] words) {
-		int answer = 0;
 		
-		char[] beginList = begin.toCharArray();
-		for(int i=0;i<words.length;i++){
-				char[] compare = words[i].toCharArray();
-				int count =0;
-				for(int j=0;j<compare.length;j++){
-					if(beginList[j]==compare[j]){
-						count++;
-					}
-				}
-				if(count==2){
-					break;
-				};
-		}
-		
-		return answer;
+		System.out.println(wordTranslation.solution(begin, target, words));
 	}
-	
-	
-	
     public int solution(String begin, String target, String[] words) {
         int answer = 0;
 
-        Map<String,String> wordsMap = new HashMap<String,String>();
+        List<String> wordList = new ArrayList<String>();
         for(int i=0;i<words.length;i++){
-        	wordsMap.put(words[i], words[i]);
+        	wordList.add(words[i]);
         }
         
-        recosion(begin , target ,wordsMap,0);
+        answer = recosion(begin,target,wordList,0);
         return answer;
     }
-    public int recosion(String begin, String target, Map<String, String> wordsMap, int i){
-    	int answer = 0;
-    	String check = "";
-        char[] chb = begin.toCharArray();
-        
-        char[] cht = target.toCharArray();
-        
-        chb[i] = cht[i];
-        
-        for(int k=0;k<chb.length;k++){
-        	check = check +String.valueOf(chb[k]);
-        }
-        
-        if(wordsMap.containsValue(check)){
-        	i++;
-        	answer++;
-        	return recosion(begin,target, wordsMap, i);
-        }
-        else{
-        	return 0;
-        }
-        
-    }
+	public int recosion(String begin, String target, List<String> wordList, int stack){
+		char[] beginList = begin.toCharArray();
+		char[] targetList = target.toCharArray();
+		int cheack = beginList.length-1;
+		for(int i=0;i<wordList.size();i++){
+			int count= 0;
+			int targetcount = 0;
+			char[] compare = wordList.get(i).toCharArray();
+			for(int j=0;j<beginList.length;j++){
+				if(beginList[j]==compare[j]){
+					count++;
+				}
+				if(beginList[j]==targetList[j]){
+					targetcount++;
+				}
+			}
+			if(targetcount==cheack){
+				stack++;
+				return stack;
+			}
+			
+			if(count==cheack){
+				begin = wordList.get(i);
+				stack++;
+				wordList.remove(i);
+				return recosion(begin, target, wordList, stack);
+			}
+		}
+		return 0;
+	}
+
 }
