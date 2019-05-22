@@ -31,7 +31,7 @@ import java.util.List;
 	[ICN, JFK, HND, IAD] 순으로 방문할 수 있습니다.
 	
 	*/
-public class Test_10 {
+public class TravelRoute {
 	
 	public class Ticket{
 		private String start;
@@ -59,10 +59,11 @@ public class Test_10 {
 		
 		
 	}
+	// 1. ICN으로 시작 -> 같은 경로일 경우에는 알파벳 순으로 출력 -> 전체 주어진 경로는 모두 사용해야함 
 	public static void main(String[] args) {
 		String[][] tickets = new String[][]{{"ICN","SFO"}, {"ICN","ATL"}, {"SFO","ATL"}, {"ATL","ICN"},{"ATL","SFO"}};
-		Test_10 test_10 = new Test_10();
-		System.out.println(test_10.solution(tickets));
+		TravelRoute travelRoute = new TravelRoute();
+		System.out.println(travelRoute.solution(tickets));
 	}
     public List<String> solution(String[][] tickets) {
         List<String> answer = new ArrayList<String>();

@@ -29,7 +29,7 @@ import java.util.Map;
 	입출력 예 #2
 	2번째자리 'b'를 기준으로 aba가 팰린드롬이 되므로 3을 return합니다.
 	*/
-public class Test_04 {
+public class Palindrome {
 
 	public static void main(String[] args) {
 		Map<String, String> inactiveFlag = new HashMap<String, String>();
