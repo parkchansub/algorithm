@@ -1,4 +1,8 @@
 package programmers.level1;
+
+import java.util.ArrayList;
+import java.util.List;
+
 // 프로그래머스 - K번째수
 	/*
 	문제 설명
@@ -32,8 +36,19 @@ package programmers.level1;
 public class Test_11 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int[] array = new int[]{1, 5, 2, 6, 3, 7, 4};
+		int[][] commands = new int[][]{{2, 5, 3},{4, 4, 1},{1, 7, 3}};
+		Test_11 test_11 = new Test_11();
+		System.out.println(test_11.solution(array,commands));
+		
+	}
+	public int[] solution(int[] array , int[][] commands){
+		int[] answer = new int[commands[0].length];
+		List<Integer> checkList = new ArrayList<Integer>();
+		for(int i=0;i<commands[0].length;i++){
+			
+		}
+		return answer;
 	}
 
 }

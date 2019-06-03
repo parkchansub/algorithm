@@ -43,17 +43,15 @@ public class Test2 {
 	
 	public int solution(int n, int[] cores) {
 		int answer= 0;
-		int time = 0;
-		int count =0;
 		n = n-cores.length;
 		Arrays.sort(cores);
+		int time = cores[0]-1;
 		while(n>0){
 			time++;
 			for(int i=0;i<cores.length;i++){
 				if(time%cores[i]==0){
 					n--;
 					if(n==0){
-						System.out.println(count);
 						return i+1;
 					}
 				}
@@ -61,6 +59,30 @@ public class Test2 {
 		}
 		return answer;
 	}
+	
+	  public int solution2(int n, int[] cores) {
+	      int answer = 0;
+			n = n-cores.length;
+	        Arrays.sort(cores);
+	      int time = cores[0]-1;
+			while(n>0){
+				time++;
+				for(int i=0;i<cores.length;i++){
+	                if(time<cores[i]){
+	                    break;
+	                }
+					if(time%cores[i]==0){
+						n--;
+						if(n==0){
+						return i+1;
+						}
+					}
+					
+				}
+			}
+
+			return answer;
+		}
 }
 
 
