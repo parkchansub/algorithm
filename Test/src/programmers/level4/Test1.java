@@ -1,6 +1,6 @@
 package programmers.level4;
 
-import java.util.LinkedList;
+import java.util.Arrays;
 
 // 프로그래머스 - 카드게임(진행중)
 
@@ -41,8 +41,9 @@ public class Test1 {
 	public static void main(String[] args) {
 		
 		Test1 test1 = new Test1();
-		int[] left = new int[]{3, 2, 5};
-		int[] right = new int[]{2, 4, 1};
+		int[] left = new int[]{3, 1,1,1, 1, 1, 1};
+		int[] right = new int[]{2,1,2, 3, 1, 1, 1};
+		
 		int a = test1.solution(left, right);
 		System.out.println(a);
 	}
@@ -50,43 +51,37 @@ public class Test1 {
 	
 	public int solution(int[] left, int[] right){
 		int answer = 0;
-		LinkedList<Integer> leftList = new LinkedList<Integer>();
-		LinkedList<Integer> rightList = new LinkedList<Integer>();
-		
-		for(int i=0;i<left.length;i++){
-			leftList.add(left[i]);
-			rightList.add(right[i]);
+		int [] rightOrigin = new int[right.length];
+		int [] leftOrigin = new int[left.length];
+		for(int i=0;i<right.length;i++){
+			rightOrigin[i] = right[i];
+			leftOrigin[i] = left[i];
 		}
 		
-		while(leftList.isEmpty() && rightList.isEmpty()){
-			leftList.getFirst(); 
+		Arrays.sort(left);
+		Arrays.sort(right);
+		for(int i=1;i<right.length;i++){
+			if(left[left.length-1]>right[right.length-i]){
+				for(int j=0;j<right.length-i+1;j++){
+					answer += right[j];
+				}
+				return answer;
+			}
+			if(left[left.length-1]==right[right.length-i]){
+				int sum =0;
+				int bsum =0;
+				for(int k=0;k<rightOrigin.length;k++){
+					sum +=rightOrigin[k];
+					bsum += rightOrigin[rightOrigin.length-k-1];
+					if(leftOrigin[k]==right[right.length-i]){
+						return sum>bsum ? sum-rightOrigin[k]:bsum-rightOrigin[k];
+					}
+				}
+			}
 		}
 		return answer;
 	}
 	
-/*	public int solution(int[] left, int[] right) {
-	    int answer = 0;
-	    
-	    answer = recosion(left, right, 0, 0, 0);
-	    return answer;
-	     
-	}
-	public int recosion(int[] left, int[] right, int sum, int i, int j){
-		
-		if(j<right.length && left[i]>right[j]){
-			sum = sum + right[j];
-		}
-		if(i==left.length-1 && j==right.length-1){
-			return sum;
-		}
-		
-		if(left[i]<=right[j] && i<left.length){
-			i++;
-			return recosion(left,right, sum, i, j);
-		}
-		
-		return recosion(left,right, sum, i, j+1);
-	}*/
-	    
+
 	    
 }

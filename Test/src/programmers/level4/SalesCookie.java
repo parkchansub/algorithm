@@ -27,11 +27,11 @@ package programmers.level4;
 	주어진 조건에 맞게 과자를 살 방법이 없습니다.
 	
 	*/
-public class Test4_sales_cookie {
+public class SalesCookie {
 
 	public static void main(String[] args) {
 		int[] cookie = new int[]{1,1,2,3};
-		Test4_sales_cookie test4_sales_cookie = new Test4_sales_cookie();
+		SalesCookie test4_sales_cookie = new SalesCookie();
 		System.out.println(test4_sales_cookie.solution(cookie));
 	}
 	
