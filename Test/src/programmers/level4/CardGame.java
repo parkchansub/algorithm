@@ -36,13 +36,13 @@ import java.util.Arrays;
 	총 얻을 수 있는 점수는 7점이다.
  	*/
 
-public class Test1 {
+public class CardGame {
 
 	public static void main(String[] args) {
 		
-		Test1 test1 = new Test1();
-		int[] left = new int[]{3, 1,1,1, 1, 1, 1};
-		int[] right = new int[]{2,1,2, 3, 1, 1, 1};
+		CardGame test1 = new CardGame();
+		int[] left  = new int[]{1,1,2,1,1,1,1};
+		int[] right = new int[]{2,1,2,3,1,1,1};
 		
 		int a = test1.solution(left, right);
 		System.out.println(a);

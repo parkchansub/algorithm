@@ -1,7 +1,9 @@
 package programmers.level3;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 //프로그래머스 - 베스트앨범(진행중)
 	/*
@@ -39,23 +41,21 @@ import java.util.List;
 	
 	*/
 
-public class Test_02 {
+public class BestAlbum {
 
 	public static void main(String[] args) {
 		String[] genres = new String[]{"classic", "pop", "classic", "classic", "pop"};
 		int[] plays = new int[]{500, 600, 150, 800, 2500};
-		Test_02 test_02 = new Test_02();
+		BestAlbum test_02 = new BestAlbum();
 		test_02.solution(genres, plays);
 	}
 	
-    public int[] solution(String[] genres, int[] plays) {
+    /*public int[] solution(String[] genres, int[] plays) {
         int[] answer = {};
         List<Music> musicList = new ArrayList<Music>();
         for(int i=0;i<genres.length;i++){
         	musicList.add(new Music(genres[i],plays[i],i));
         }
-        
-        
         
         return answer;
     }
@@ -70,5 +70,39 @@ public class Test_02 {
     		this.play = play;
     		this.index = index;
     	}
-    }
+
+		public String getGener() {
+			return gener;
+		}
+
+		public int getPlay() {
+			return play;
+		}
+
+		public int getIndex() {
+			return index;
+		}
+
+    	
+    }*/
+	
+	
+	public int[] solution(String[] genres, int[] plays) {
+		  int[] answer = {};
+		  
+		  Map<String, Integer> genresCount= new HashMap<String, Integer>();
+		  for(int i=0;i<genres.length;i++){
+			  if(genresCount.containsKey(genres[i])){
+				  genresCount.put(genres[i],plays[i]+genresCount.get(genres[i]));  
+			  }else{
+				  genresCount.put(genres[i],plays[i]);  
+			  }
+		  }
+		  
+		  Set genresList = new HashSet();
+		  for(String genre : genres){
+			  genresList.add(genre);  
+		  }
+		  return answer;
+	}
 }
